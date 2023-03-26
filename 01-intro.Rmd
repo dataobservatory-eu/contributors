@@ -1,21 +1,120 @@
-# Introduction {#intro}
+# Overview {#overview}
 
-You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
+## Ambition in the Open Music Europe Grant Agreement
 
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
+[Open Music Europe](https://openmuse.dataobservatory.eu/) aims to contribute to the aim of creating a decentralised European intelligence hub where centralised data collection and analysis have failed in the music industry during the past 20 years. 
 
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
+We envision the Open Data Observatory as a decentralised, complementary service to the ESSnet system (Eurostat and the national statistics offices) and the planned, centralised European Music Observatory (EMO). [...]  We plan to implement the Open Data Observatory as an open-source, public-facing solution working in synergy with the EMO. 
+
+We will create `reproducible` “dynamic policy documents” that can be transferred from one country to another or scaled up from one country to a group of countries or even the entire European Union, and recast with little effort after the inception of new data every year, due to their very high level of data/output standardisation and interoperability. 
+
+Instead of creating a large budget, ad-hoc valuation reports, these reports, with their automatic data harvesting and processing, can be recast annually with little further investment, or they can be transferred from Hungary to Bulgaria, from Slovakia to Lithuania.
+
+## Methodology in the Open Music Europe Grant Agreement
+
+The `Level 3` version of the *Open Policy Analysis* (`OPA`) Guidelines gives practical guidance on how to improve the transparency and replicability of policy-making work with a scientific underpinning. The OPA guidelines go farther than current Horizon Europe recommendations, subjecting policy research and deliberation to standards as rigorous as those used in e.g. open-source software development and open science peer review. 
+
+The guidelines consist of three layers: 
+
+- [x] `open materials` (i.e., the evidence considered in policy) | check out the materials of this handbook. 
+
+- [x] `open analysis` (the analytical procedures to which the evidence is subject); see for example [D 1.3 Report on the European Music Economy](https://openmuse.dataobservatory.eu/resources/report-european-music-economy/) | [Slides](https://openmuse.dataobservatory.eu/slides/report-european-music-economy/) | [file folder](https://github.com/dataobservatory-eu/report-european-music-economy) | [long term storage](https://zenodo.org/record/6464782#.ZCCWP9JBzlg) | [README](https://github.com/dataobservatory-eu/report-european-music-economy/blob/main/README.md). 
+
+- [x] `open output` (the indicators, recommendations, etc. derived from the analysis): we syncronize them with libraries via [OpenAIRE](https://www.openaire.eu/) and our visual assets and cultural data via [Europeana](https://www.europeana.eu/en) aggregators.
+
+Each level must be fully replicable. Establishing a clear link between input and output by displaying how the output changes under `Open Music Europe` uses `Open Policy Analysis` to create policy-relevant indicators. [@framework_for_opa_2020; @acre_guide] and they are fully in line with the Open Science objectives of the European Union 
+[@reproducibility_scientific_results_eu_2020].
+
+```{r opafig-wp, fig.align='center', fig.cap='Our ambition to increase transparency with introducing the Open Policy Analysis into the European music policies and collaborative data use in the European industry.'}
+knitr::include_graphics(file.path("webp", "opa_framework.webp"))
 ```
 
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
+Open Music Europe furthermore ensures that all materials, analysis, and outputs meet the `FAIR principles` enshrined in Horizon Europe and the EU’s open science agenda and will be submitted as best practices to the*Knowledge4Policy* [K4P](https://knowledge4policy.ec.europa.eu/home_en) Portal horizontal knowledge areas on Evidence-Informed Policy Making, Composite Indicators, Modelling, and AI Watch. 
 
-```{r nice-tab, tidy=FALSE}
-knitr::kable(
-  head(iris, 20), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
+In Europe, the European Commission launched the  platform, along with several initiatives to make EU-funded research more accessible, notably, with changing some financial guidelines for its research program, and amending the [Open Data Directive](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32019L1024) in 2019.
+
+
+The subsequent chapters of this Manual show how we will comply with both FAIR and OPA by making our documents and files [Findable](#findable) in a way that meets open policy analysis compliance, make them [Interoperable](#interoperability) for machines and researchers,[Accessible](#accessible) for human and algorithms, and [Reusable](#reuse) for human and automated use.
+
+These efforts toward radical transparency will help ensure open deliberation and consensus-forming among stakeholders. Putting evidence-based policymaking into practice in music research, we will establish a precedent for its incorporation as a keystone of the social sciences and digital humanities more broadly.
+
+## Documents, Word Processing, Manuscripts, Blogposts
+
+We must make our documents Findable, Interoperable, Accessible and Reusable. We introduce the [tidy text](#interoperability-tidy-text) concept in the [Interoperability](#interoperability) chapter.
+
+Interoperability in this case making your text editing simpler. Regardless your use of Word, Grammarly, Libre, or a markdown editor, we would like you to keep it as simple that it can be translated to markdown notation, which then can create automatically correct, beautiful Word, PDF, or LaTeX documents.
+
+Markdown is a very simple text notation, similar to the earlier manuscript markup languages used by book editors. You can learn it in 1-2 hours, but even if you do not use it, you should always check that your formatting remains simple enough to be translated (simplified) to markdown. An introduction to using markdown is in \@ref(tidy-text) [Tidy Text](#tidy-text).  You can get the concept in 10 minutes with [Dillinger](#try-markdown).
+
+
+::: {.rmdnote data-latex="{note}"}
+
+See the first version of our slide templates [here](https://openmuse.dataobservatory.eu/slides/open-music-europe-document-template/), and visit our template folder ([Open Music Europe dissemination and communications assets](https://github.com/dataobservatory-eu/open_music_europe_templates/)). Help our colleagues at Synyo to make this template more aesthetic, more usable, and more interoperable by sending issues and big reports [here](https://github.com/dataobservatory-eu/open_music_europe_templates/issues).
+
+:::
+
+
+## Datasets, Tables, Tabular Data
+
+We must make our documents Findable, Interoperable, Accessible and Reusable. We introduce the [tidy data](#interoperability-tidy-text) concept in the [Interoperability](#interoperability) chapter, and go into further depth (only to be used for the Data Management Plan, and some quantiative task of WP1, WP2, WP3, and the programimng parts of WP3) in the \@ref(tidy-data) [Tidy data](#tidy-data) separate chapter.
+
+For laypersons, tidy data ensures that your data is very easy to import into a relational database (SQL, etc) or it can be read into Excel, OpenOffice, SPSS or STATA without a hiss. Keeping your data is keeping your data simple, and will save you countless hours in the [Data Sisyphus](https://dataandlyrics.com/post/2021-07-08-data-sisyphus/).
+
+## Presentations
+
+Presentations are special types of documents where the visual elements dominate. Making them truly interoperable is a big challenge, because we expect them to work on a projector, on a Windows laptop, an Apple desktop, a Linux server, on a tablet, smartphone. 
+
+::: {.rmdnote data-latex="{note}"}
+
+See the first version of our slide templates [here](https://openmuse.dataobservatory.eu/slides/open-music-europe-slide-template/), and visit our template folder ([Open Music Europe dissemination and communications assets](https://github.com/dataobservatory-eu/open_music_europe_templates/)). Help our colleagues at Synyo to make this template more aesthetic, more usable, and more interoperable by sending issues and big reports [here](https://github.com/dataobservatory-eu/open_music_europe_templates/issues).
+
+
+:::
+
+## Working Folders (repositories)
+
+Our file folders, or repositories, are stored on Microsoft's Github.  They work similarly to a Google Drive or a Dropbox, but with some further featured that makes them compliant with the EU's FAIR and the OPA.
+
+The use of a standardised file structure and the use of an open, selfcontained folder with a readme file is central to \@ref(open-collaboration)  [Open collaboration](#open-collaboration), i.e., or project management philosophy, as well as to compliance with the \@ref(findable) [F - Findable](#findable) principle in the European open science requirements and in OPA.  
+
+- [x] Access to them is not proprietary, it requires the https protocol (or SSH)
+- [x] They are version controlled, and protected for deleting, overwriting
+- [x] Many people can work on them without disturbing each other.
+- [x] WP leaders and task leaders can assign tasks connected to files (such as issues, check out the improvement issues to make our Word and PPTX files truly interoperable).
+- [x] Competing ideas can be disussed under the issues, or help can be asked for, even outside of our work groups or consortia.
+- [ ] You need a program to sync it to your computer (Similarly to DropBox o Microsoft's OneDrive)
+
+The downside is a bit more learning:
+
+- [x] You do not work in the same folder, like in Google Drive, in the cloud, you always create your copy ('fork') first, so that you are protected from accidentally overwriting; this is both a blessing and a curse for beginners.
+- [ ] The sync is never automatic: you always have to approve every download and upload
+- [ ] Resolving conflicts (you changed something in a text that somebody else also changed in a different way) requires experience.
+
+You find more information on how to use Git and GitHub in the [Collaboration tools](#collaboration-tools) chapter.
+
+## Final folders for syncronization and publication
+
+Our long term storage is [Zenodo](), the repository system of [OpenAIRE](https://www.openaire.eu/) and 
+CERN, the European Organization for Nuclear Research.
+
+Zenodo is an extremely useful tool:
+- [x] It places directly into global library catalogues our work, if it is high-enough capacity
+- [x] It connects it to people who cite us, it connects it with similar books, articles, datasets
+- [x] It provides for a truly open an interoperable access point.
+
+Yet, it is no exception to the garbe-in-garbage-out principle. In WP4 we develop tools that helps to make out a lot more from your blogposts, presentations, manuscripts, final articles, and datasets on Zenodo and the global knowledge graphs. See more in \@ref(tidy-data) [Tidy data](#tidy-data).
+
+```{r}
+knitr::include_graphics(file.path("webp", "report-european-music-economy_0_1.webp"))
 ```
+Check out our [Digital Music Observatory collection](https://zenodo.org/communities/music_observatory/) and this particular [storage folder](https://zenodo.org/record/6464990#.ZCCdGNJBzlg). 
 
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+## Biographies
+
+We use [ORCiD](https://orcid.org/) because we rely on Zenodo as an open source repository, but we can include almost any academic badge on your profile that you like, just make sure that you have an ORCiD ID, too. 
+
+
+## Photographs
+
+
+

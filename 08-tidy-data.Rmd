@@ -1,0 +1,18 @@
+# Tidy Data {#tidy-data}
+
+Our reproducible research practice follows the tidy data principle, which has very complex computer science and information management consequences. Still, for the lay user of data, it boils down to simplicity.
+
+Tidy data is a standard way of mapping the meaning of a dataset to its structure. A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. 
+
+In tidy data:
+- Every column is a variable. We do not use colours (our machine-to-machine pipelines is colourblind). If we need comments or specifications, we add a new column.
+- Every row is an observation. Every variable belonging to `Bulgaria` is in the `Bulgaria` row, and there is one and only `Bulgaria row`.
+- Every cell is a single value. We never merge cells! A tidy dataset has no divided columns and no divided rows.
+
+This is often far more easier to write than to do, but still, if you can make it that simple, then you already mastered Codd’s 3rd normal formframed in statistical language.
+
+[Tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html#:~:text=Tidy%20data%20is%20a%20standard,Every%20row%20is%20an%20observation) is data in Codd’s 3rd normal form, but with the constraints framed in statistical language, and the focus put on a single dataset rather than the many connected datasets common in relational databases.
+
+Our task in `WP4` is to help tidying some datasets that are commonly used in music, and surveying, and which will be used in WP1 (linking royalty accounts with SDMX compatible statistical data), WP2 (linking various, special purpose music data resources), and WP3 (DDI survey datasets, DDI survey codebooks). See more: [dataset: Create Data Frames that are Easier to Exchange and Reuse](https://zenodo.org/record/7440192#.ZCCcz9JBzlg).
+
+

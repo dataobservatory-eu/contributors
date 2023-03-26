@@ -1,0 +1,842 @@
+--- 
+title: "Contributors Guidebook for the Data Observatories and Open Collections"
+author: "Daniel Antal"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: 
+- book.bib
+- packages.bib
+- bib/opa.bib
+- bib/opendata.bib
+- bib/openscience.bib
+biblio-style: apalike
+link-citations: yes
+github-repo: dataobservatory-eu/contributors
+description: "Contributors Guidebook for the Data Observatories and Open Collections."
+---
+
+```{r setupknitr, include=FALSE}
+knitr::opts_chunk$set(echo      = FALSE, 
+                      message   = FALSE, 
+                      warning   = FALSE,
+                      out.width = '90%', 
+                      fig.align = 'center')
+
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(kableExtra)
+library(here)
+here::here()
+source(here("R", "html_caption.R"))
+# Ellipsis: …
+
+is_word_output <- ifelse (knitr::is_html_output()|knitr::is_latex_output(), FALSE, TRUE)
+```
+
+# Introduction {-}
+
+::: {.rmdnote data-latex="{note}"}
+
+Big data creates **inequalities**, because only the world’s biggest global corporations, best endowed universities and strongest governments can maintain long, well-designed, global data collection programs.
+
+:::
+
+This handbook is made for people working together in an [open collaboration](#open-collaboration) on the [Digital Music Observatory](https://music.dataobservatory.eu/) and its funded projects, [Listen Local Lithuania](https://lithuania.listen-local.net/), [Eviota](https://music.dataobservatory.eu/project/musiceviota/), [SurveyHarmonies](https://www.sinus-institut.de/en/sinus-institut/case-studies/surveyharmonies) and [Open Music Europe](https://music.dataobservatory.eu/project/openmusiceurope/); the connecting [Open Collection Network](https://www.opencollections.net/) and the [CCSI Data Observatory](https://ccsi.dataobservatory.eu/) and [Green Deal Data Observatory](https://greendeal.dataobservatory.eu/).
+
+```{r eval=FALSE}
+install.packages("bookdown")
+# or the development version
+# devtools::install_github("rstudio/bookdown")
+```
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+<!--chapter:end:index.Rmd-->
+
+# Overview {#overview}
+
+## Ambition in the Open Music Europe Grant Agreement
+
+[Open Music Europe](https://openmuse.dataobservatory.eu/) aims to contribute to the aim of creating a decentralised European intelligence hub where centralised data collection and analysis have failed in the music industry during the past 20 years. 
+
+We envision the Open Data Observatory as a decentralised, complementary service to the ESSnet system (Eurostat and the national statistics offices) and the planned, centralised European Music Observatory (EMO). [...]  We plan to implement the Open Data Observatory as an open-source, public-facing solution working in synergy with the EMO. 
+
+We will create `reproducible` “dynamic policy documents” that can be transferred from one country to another or scaled up from one country to a group of countries or even the entire European Union, and recast with little effort after the inception of new data every year, due to their very high level of data/output standardisation and interoperability. 
+
+Instead of creating a large budget, ad-hoc valuation reports, these reports, with their automatic data harvesting and processing, can be recast annually with little further investment, or they can be transferred from Hungary to Bulgaria, from Slovakia to Lithuania.
+
+## Methodology in the Open Music Europe Grant Agreement
+
+The `Level 3` version of the *Open Policy Analysis* (`OPA`) Guidelines gives practical guidance on how to improve the transparency and replicability of policy-making work with a scientific underpinning. The OPA guidelines go farther than current Horizon Europe recommendations, subjecting policy research and deliberation to standards as rigorous as those used in e.g. open-source software development and open science peer review. 
+
+The guidelines consist of three layers: 
+
+- [x] `open materials` (i.e., the evidence considered in policy) | check out the materials of this handbook. 
+
+- [x] `open analysis` (the analytical procedures to which the evidence is subject); see for example [D 1.3 Report on the European Music Economy](https://openmuse.dataobservatory.eu/resources/report-european-music-economy/) | [Slides](https://openmuse.dataobservatory.eu/slides/report-european-music-economy/) | [file folder](https://github.com/dataobservatory-eu/report-european-music-economy) | [long term storage](https://zenodo.org/record/6464782#.ZCCWP9JBzlg) | [README](https://github.com/dataobservatory-eu/report-european-music-economy/blob/main/README.md). 
+
+- [x] `open output` (the indicators, recommendations, etc. derived from the analysis): we syncronize them with libraries via [OpenAIRE](https://www.openaire.eu/) and our visual assets and cultural data via [Europeana](https://www.europeana.eu/en) aggregators.
+
+Each level must be fully replicable. Establishing a clear link between input and output by displaying how the output changes under `Open Music Europe` uses `Open Policy Analysis` to create policy-relevant indicators. [@framework_for_opa_2020; @acre_guide] and they are fully in line with the Open Science objectives of the European Union 
+[@reproducibility_scientific_results_eu_2020].
+
+```{r opafig-wp, fig.align='center', fig.cap='Our ambition to increase transparency with introducing the Open Policy Analysis into the European music policies and collaborative data use in the European industry.'}
+knitr::include_graphics(file.path("webp", "opa_framework.webp"))
+```
+
+Open Music Europe furthermore ensures that all materials, analysis, and outputs meet the `FAIR principles` enshrined in Horizon Europe and the EU’s open science agenda and will be submitted as best practices to the Knowledge4Policy Portal horizontal knowledge areas on Evidence-Informed Policy Making, Composite Indicators, Modelling, and AI Watch. 
+
+The subsequent chapters of this Handbook show how we will comply with both FAIR and OPA by making our documents and files \@ref(findable)  [Findable](#findable) in a way that meets open policy analysis compliance, make them \@ref(interoperability)  [Interoperable](#interoperability) for machines and researchers,\@ref(accessible) [Accessible](#accessible) for human and algorithms, and  \@ref(reuse) [Reusable](##reuse) for human and automated use.
+
+These efforts toward radical transparency will help ensure open deliberation and consensus-forming among stakeholders. Putting evidence-based policymaking into practice in music research, we will establish a precedent for its incorporation as a keystone of the social sciences and digital humanities more broadly.
+
+## Documents, Word Processing, Manuscripts, Blogposts
+
+We must make our documents Findable, Interoperable, Accessible and Reusable. We introduce the [tidy text](#interoperability-tidy-text) concept in the [Interoperability](#interoperability) chapter.
+
+Interoperability in this case making your text editing simpler. Regardless your use of Word, Grammarly, Libre, or a markdown editor, we would like you to keep it as simple that it can be translated to markdown notation, which then can create automatically correct, beautiful Word, PDF, or LaTeX documents.
+
+Markdown is a very simple text notation, similar to the earlier manuscript markup languages used by book editors. You can learn it in 1-2 hours, but even if you do not use it, you should always check that your formatting remains simple enough to be translated (simplified) to markdown. An introduction to using markdown is in \@ref(tidy-text) [Tidy Text](#tidy-text).  You can get the concept in 10 minutes with [Dillinger](#try-markdown).
+
+
+::: {.rmdnote data-latex="{note}"}
+
+See the first version of our slide templates [here](https://openmuse.dataobservatory.eu/slides/open-music-europe-document-template/), and visit our template folder ([Open Music Europe dissemination and communications assets](https://github.com/dataobservatory-eu/open_music_europe_templates/)). Help our colleagues at Synyo to make this template more aesthetic, more usable, and more interoperable by sending issues and big reports [here](https://github.com/dataobservatory-eu/open_music_europe_templates/issues).
+
+:::
+
+
+## Datasets, Tables, Tabular Data
+
+We must make our documents Findable, Interoperable, Accessible and Reusable. We introduce the [tidy data](#interoperability-tidy-text) concept in the [Interoperability](#interoperability) chapter, and go into further depth (only to be used for the Data Management Plan, and some quantiative task of WP1, WP2, WP3, and the programimng parts of WP3) in the \@ref(tidy-data) [Tidy data](#tidy-data) separate chapter.
+
+For laypersons, tidy data ensures that your data is very easy to import into a relational database (SQL, etc) or it can be read into Excel, OpenOffice, SPSS or STATA without a hiss. Keeping your data is keeping your data simple, and will save you countless hours in the [Data Sisyphus](https://dataandlyrics.com/post/2021-07-08-data-sisyphus/).
+
+## Presentations
+
+Presentations are special types of documents where the visual elements dominate. Making them truly interoperable is a big challenge, because we expect them to work on a projector, on a Windows laptop, an Apple desktop, a Linux server, on a tablet, smartphone. 
+
+::: {.rmdnote data-latex="{note}"}
+
+See the first version of our slide templates [here](https://openmuse.dataobservatory.eu/slides/open-music-europe-slide-template/), and visit our template folder ([Open Music Europe dissemination and communications assets](https://github.com/dataobservatory-eu/open_music_europe_templates/)). Help our colleagues at Synyo to make this template more aesthetic, more usable, and more interoperable by sending issues and big reports [here](https://github.com/dataobservatory-eu/open_music_europe_templates/issues).
+
+
+:::
+
+## Working Folders (repositories)
+
+Our file folders, or repositories, are stored on Microsoft's Github.  They work similarly to a Google Drive or a Dropbox, but with some further featured that makes them compliant with the EU's FAIR and the OPA.
+
+The use of a standardised file structure and the use of an open, selfcontained folder with a readme file is central to \@ref(open-collaboration)  [Open collaboration](#open-collaboration), i.e., or project management philosophy, as well as to compliance with the \@ref(findable) [F - Findable](#findable) principle in the European open science requirements and in OPA.  
+
+- [x] Access to them is not proprietary, it requires the https protocol (or SSH)
+- [x] They are version controlled, and protected for deleting, overwriting
+- [x] Many people can work on them without disturbing each other.
+- [x] WP leaders and task leaders can assign tasks connected to files (such as issues, check out the improvement issues to make our Word and PPTX files truly interoperable).
+- [x] Competing ideas can be disussed under the issues, or help can be asked for, even outside of our work groups or consortia.
+- [ ] You need a program to sync it to your computer (Similarly to DropBox o Microsoft's OneDrive)
+
+The downside is a bit more learning:
+
+- [x] You do not work in the same folder, like in Google Drive, in the cloud, you always create your copy ('fork') first, so that you are protected from accidentally overwriting; this is both a blessing and a curse for beginners.
+- [ ] The sync is never automatic: you always have to approve every download and upload
+- [ ] Resolving conflicts (you changed something in a text that somebody else also changed in a different way) requires experience.
+
+You find more information on how to use Git and GitHub in the [Collaboration tools](#collaboration-tools) chapter.
+
+## Final folders for syncronization and publication
+
+Our long term storage is [Zenodo](), the repository system of [OpenAIRE](https://www.openaire.eu/) and 
+CERN, the European Organization for Nuclear Research.
+
+Zenodo is an extremely useful tool:
+- [x] It places directly into global library catalogues our work, if it is high-enough capacity
+- [x] It connects it to people who cite us, it connects it with similar books, articles, datasets
+- [x] It provides for a truly open an interoperable access point.
+
+Yet, it is no exception to the garbe-in-garbage-out principle. In WP4 we develop tools that helps to make out a lot more from your blogposts, presentations, manuscripts, final articles, and datasets on Zenodo and the global knowledge graphs. See more in \@ref(tidy-data) [Tidy data](#tidy-data).
+
+```{r}
+knitr::include_graphics(file.path("webp", "report-european-music-economy_0_1.webp"))
+```
+Check out our [Digital Music Observatory collection](https://zenodo.org/communities/music_observatory/) and this particular [storage folder](https://zenodo.org/record/6464990#.ZCCdGNJBzlg). 
+
+## Biographies
+
+We use [ORCiD](https://orcid.org/) because we rely on Zenodo as an open source repository, but we can include almost any academic badge on your profile that you like, just make sure that you have an ORCiD ID, too. 
+
+
+## Photographs
+
+
+
+
+<!--chapter:end:01-intro.Rmd-->
+
+# Inspiration {#inspiration}
+
+To become a data curator, you do not need to be a data scientist, a statistician, or a data engineer.  We are looking for professionals, researchers, or citizen scientists who are interested in data and its visualization, and its potential to form the basis of informed business or policy decisions and to provide scientific or legal evidence. Our ideal curators share a passion for data-driven evidence or visualizations, and have a strong, subjective idea about the data that would inform them in their work.
+
+## We need data {#inspiration-data-need}
+
+### No Data is Available: This Scientist Stung Himself With Dozens Of Insects Because No One Else Would
+
+```{r}
+knitr::include_graphics(file.path("png", "schmidt_pain_index.png"))
+```
+
+The Schmidt Pain Index, as its informally known, runs from 1-4. The common honey bee serves as its anchor point, a solid 2. At the top end of the scale lie the bullet ant and the tarantula hawk (which is neither a tarantula nor a hawk; it’s [a wasp](https://www.wired.com/2015/07/absurd-creature-of-the-week-tarantula-hawk/)). Watch the video with [Dr. Schmidt](https://youtu.be/i0LjT-qkUes), and listen to the whole interview [here](https://podcasts.apple.com/us/podcast/48-the-schmidt-sting-pain-index/id1011406983?i=1000391467968). [⏯ This Scientist Stung Himself With Dozens Of Insects Because No One Else Would](https://fivethirtyeight.com/features/this-scientist-stung-himself-with-dozens-of-insects-because-no-one-else-would/).
+
+### Nobody Counted Them Before: Big Data Is Saving This Little Bird
+
+“We need to improve conservation by improving wildlife monitoring. Counting plants and animals is really tricky business.” [⏯ Big Data Is Saving This Little Bird](https://fivethirtyeight.com/features/big-data-is-saving-this-little-bird/)
+
+
+## From Datasets and Files to Living Web Resoures {web-30}
+
+### Web 3.0
+
+
+```{r}
+knitr::include_graphics(here::here("png", "weblinks.png"))
+```
+
+
+## Remain Critical: Ethical Data, Trustworthy AI {#critical-attitude}
+
+Sometimes we put our hands on data that looks like a unique starting point to create a new indicator. But our indicator will be flawed if the original dataset is flawed. And it can be flawed in many ways, most likely that some important aspect of the information was omitted, or the data is autoselected, for example, under-sampling women, people of color, or observations from small or less developed countries.
+
+### Machine Learning from Bad Data: Weapons of Math Destruction, Algorithms of Oppression
+
+Cathy O’Neil: [⏯ Weapons of math destruction](https://en.wikipedia.org/wiki/Weapons_of_Math_Destruction), which O’Neil are mathematical models or algorithms that claim to quantify important traits: teacher quality, recidivism risk, creditworthiness but have harmful outcomes and often reinforce inequality, keeping the poor poor and the rich rich. They have three things in common: opacity, scale, and damage. https://blogs.scientificamerican.com/roots-of-unity/review-weapons-of-math-destruction/](https://blogs.scientificamerican.com/roots-of-unity/review-weapons-of-math-destruction/)
+
+In [⏯ Algorithms of Oppression](https://nyupress.org/9781479837243/algorithms-of-oppression/), Safiya Umoja Noble challenges the idea that search engines like Google offer an equal playing field for all forms of ideas, identities, and activities. Data discrimination is a real social problem; Noble argues that the combination of private interests in promoting certain sites, along with the monopoly status of a relatively small number of Internet search engines, leads to a biased set of search algorithms that privilege whiteness and discriminate against people of color, specifically women of color.
+
+### Big Data Creates Inequalities: Data Feminism
+
+Catherine D'Ignazio and Lauren F. Klein: [⏯ Data Feminism](https://mitpress.mit.edu/books/data-feminism). This is a much celebrated book, and with a good reason. It views AI and data problems with a feminist point of view, but the examples and the toolbox can be easily imagined for small-country biases, racial, ethnic, or small enterprise problems. A very good introduction to the injustice of big data and the fight for a fairer use of data, and how bad data collection practices through garbage in garbage out lead to misleading information, or even misinformation.
+
+### Bad Data collection Used for Modeling: Why The Bronx Burned
+
+[Why The Bronx Burned](https://fivethirtyeight.com/features/why-the-bronx-really-burned/). Between 1970 and 1980, seven census tracts in the Bronx lost more than 97 percent of their buildings to fire and abandonment. In his book [⏯ The Fires](https://www.amazon.com/Fires-Computer-Intentions-City-Determined/dp/1594485062), Joe Flood lays the blame on misguided “best and brightest” effort by New York City to increase government efficiency. With the help of the Rand Corp., the city tried to measure fire response times, identify redundancies in service, and close or re-allocate fire stations accordingly. What resulted, though, was a perfect storm of bad data: The methodology was flawed, the analysis was rife with biases, and the results were interpreted in a way that stacked the deck against poorer neighborhoods. The slower response times allowed smaller fires to rage uncontrolled in the city’s most vulnerable communities. Listen to the podcast [here](https://podcasts.apple.com/us/podcast/19-why-the-bronx-burned/id1011406983?i=1000391467912).
+
+### Bad Incentives Are Blocking Better Science
+
+[Bad Incentives Are Blocking Better Science](https://fivethirtyeight.com/features/podcast-bad-incentives-are-blocking-better-science/) “There’s a difference between an answer and a result. But all the incentives are pointing toward telling you that as soon as you get a result, you stop.” After the deluge of retractions, the stories of fraudsters, the false positives, and the high-profile failures to replicate landmark studies, some people have begun to ask: “[⏯ Is science broken?](https://fivethirtyeight.com/features/science-isnt-broken/)”. Listen to the pdocast [⏯Science is Hard] tttps://podcasts.apple.com/us/podcast/10-science-is-hard/id1011406983?i=1000391467935)
+
+## Reality Check
+
+### Looking Behind Data: Moving to America's Worst Place to Live
+
+Christopher Ingraham wrote [⏯ a quick blog post](https://www.washingtonpost.com/gdpr-consent/?next_url=https%3a%2f%2fwww.washingtonpost.com%2fnews%2fwonk%2fwp%2f2015%2f08%2f17%2fevery-county-in-america-ranked-by-natural-beauty%2f) for The Washington Post about an obscure USDA data set called the `natural amenities index`, which attempts to quantify the natural beauty of different parts of the country. He described the rankings, noted the counties at the top and bottom, hit publish and did not think much of it. Almost immediately he started to hear from the residents of northern Minnesota, who were not very happy that Chris had written, “the absolute worst place to live in America is (drumroll, please) … Red Lake County, Minn.” He could not have been more wrong … a year later [he moved](https://fivethirtyeight.com/features/he-called-it-americas-worst-place-to-live-now-hes-moving-there/) to Red Lake County with his family.
+
+
+<!--chapter:end:02-inspiration.Rmd-->
+
+# F - Findable {#findable}
+
+::: {.rmdnote data-latex="{note}"}
+
+The first step in (re)using data, text, sound recordings, films, photographs is to find them. Metadata and data should be easy to find for both humans and computers.
+
+:::
+
+Making datasets, texts, photos, sound recordings (together: digital assets) easier to find is the first step to higher visibility, higher impact; it avoids unnecessary costs.
+
+We want to make our digital assets findable for both humans and computers (search engines, recommender systems.) You do not need to be a librarian, an archivist or web programmer to make this happen, but it requires a certain discipline in your workflows to make your assets findable.  We want to make this process practical and painless.
+
+## Think about your computer as if it was the internet
+
+What makes something easy to find on the Internet?  
+
+## Place the digital asset to the right place {#right-place}
+
+The simplest metadata, which is all so often used in our automated positions is to use the file location as information about what the file is. Is it placed in the `assets/img/` folder: it is an image asset.  Is it in the `content/event/` folder: it contains date, time, venue location and information about an event.
+
+## Use meaningful names {#meaningful-names}
+
+>There are only two hard things in Computer Science: cache invalidation and naming things.
+-- Phil Karlton
+
+Meaningful variable names (in a file), meaningful headings (which will be part of a table of contents or catalogue) and meaningful filenames are absolutely important to findability, interoperability and reusability.
+
+Using systematic names is hard.  It is very hard. We can only try to improve.  Here are a few tips:
+
+- [x] Use a clear system: avoid UpperCase letters, space, and non-ASCII characters.
+- [x] Instead of the <space>, use _ underscore or - short hyphen in a systematic way.
+
+Good file names with a path to their location contain plenty of easy to read, easy to understand metadata.
+
+`assets/img/blogposts_2023/my_favorite_playlist.png`  makes it clear that this is an image (visual) asset illustrating your favorite playlist, and it was published in a 2023 blogpost. 
+
+`content/event/2023-03-08_listen-local-lithuania` makes it clear that we find venue information, time, photos, texts about a dissemination event that took place on 2023-03-08.
+
+The trick is that our automated dissemination system turns this information into a website.  `/event/2023-03-08_listen-local-lithuania/` becames part of a URL, so that everybody can find this information in the whole wilde world. 
+
+- [ ] Avoid the use of `<space>`. Space will be translated in URLs to %20, making Listen Local Lithuania `Listen%20Local%20Lithuania`, which is difficult to read.
+
+- [ ] Avoid the use of national characters. Some browsers can read the Veronika Povilionien**ė** ė character well, others not. Some users have Lithuanian charactes, others don't. [https://lithuania.listen-local.net/musicians/veronika_povilioniene/](https://lithuania.listen-local.net/musicians/veronika_povilioniene/) makes it clear that we find information (a file) about Veronika Povilionienė here. It is the very same file on our GitHub source repository (you can add more information about here there), and in the local copy on your computer (if you forked and downloaded it.)
+
+- [ ] Avoid the use of space, again. Most of our work is done with program codes (automated), and programming languages treat the `<space>` in a special way. Variable names cannot contain space in R or Python or any language.
+
+## OPA Requirements
+
+We adhere to the Open Policy Analysis Guidelines, which aim to make your policy-related research findable to everybody in the world, not only you or your supervisor.
+
+::: {.rmdnote data-latex="{note}"}
+
+Standardise the file structure so that materials are organized in a way that is accessible to an informed reader: all project components are organized in a selfcontained folder using a Standard File Structure (SFS), and a readme file is included. 
+
+:::
+
+Our [Report on the European Music Economy](https://openmuse.dataobservatory.eu/resources/report-european-music-economy/) is being prepared from the grant proposal stage in this format.
+
+- All the files are placed [into a public repository](https://github.com/dataobservatory-eu/report-european-music-economy).  Anybody can find the files here, and suggest additions, deletions or modifications.
+
+- The repository has a public [readme](https://github.com/dataobservatory-eu/report-european-music-economy/blob/main/README.md) file. (in text view, [here](https://raw.githubusercontent.com/dataobservatory-eu/report-european-music-economy/main/README.md).)
+
+::: {.rmdnote data-latex="{note}"}
+
+Label and document each input, including data, research, and guesswork: list all inputs, and their sources, and provide links or detailed references. In practice, all our inputs are uploaded into the repositories, and they have included in the standard bibliography (.bib) files which make their citation automatic in use.
+
+:::
+
+
+
+::: {.rmdnote data-latex="{note}"}
+
+Use a version control strategy: All team members use version control software and track changes in a shared project repository. All our deliverables are delivered in a version-controlled repository.
+
+:::
+
+We use Git technology (and Microsoft's GitHub), because it offers version control for even larger groups of people.  
+
+- [x] Shared repositories with Git technology offer version control, history, conflict resolution that works on all Windows, Mac, Unix systems.
+- [ ] Google Drive and Dropbox do not offer version control and conflict resolution.
+- [ ] Microsoft's SharePoint offers such solutions, but it requires costly licenses and oversight, and do not work outside of the Microsoft universe.
+
+
+## European Open Science Requirements (non-technical)
+
+Before turning to the European FAIR requirements on **F**indability, we explain them in lay terms. While the Horizon Europe program requires full compliance with this European Open Science Cloud requirement, for most researchers and innovators it is too technical to follow.
+
+**We use globally unique and persistent identifiers:** There are many bands called `RAIN`, many Lithuanian artists `Sale`, and library catalogues know at least 33 `James Campbells`.  
+
+
+```{r orcigpng, fig.cap="All our researchers are identified with an ORCiD identifier"}
+knitr::include_graphics(file.path("png", "orcid.png"))
+```
+
+Do not have an ORCiD yet? You can register on [orcid.org](https://orcid.org/), it takes only a minute. 
+
+- [x] All our artists are identified with a VIAF, ISNI, GND or similar identifier.
+- [x] All our public documents are identified with a https URL. (Now it is becoming understanble why is the `file_location/on_your_sytem/events/2023_01_95_james_campell_release` is so important!)
+
+**We add rich metadata**. We even have a research task where we want to identify data improvement strategies!
+
+**Metadata clearly and explicitly include the identifier of the data they describe**: The metadata and the dataset they describe are usually separate files. The association between a metadata file and the dataset should be made explicit by mentioning a dataset’s globally unique and persistent identifier in the metadata.
+
+We write here about [Natas Kunas](https://lithuania.listen-local.net/solo_projects/natas_kunas/), but if you look for photos about this project, you find it [here](https://www.instagram.com/nataskunas/); you can listen to it [here](https://open.spotify.com/artist/3x6z3LboKBz0wEZk8HH47X?si=Q6bX3Fx3RGS0Eo2MGKP5xw&nd=1), and you may find further information about the artist named _Donatas Vaitkūnas_ in libraries or rights management database. We need to connect all this information, regardless if we release scientific texts, datasets, or even event invitations. This is a technical task but requires cooperation from the creators of digital files.
+
+**Digital assets are registered or indexed in a searchable resource**: we insert all our knowledge output, sound recordings, photographs, into global collections and libraries. We put visualizations on FigShare, manuscripts on Zenodo, artist information on Wikidata and Wikipedia; details of our digital assets to global library systems via OpenAIRE and Europeana, etc.
+
+If you placed correctly named, formatted files into the right place, we will take it from here.  You will be surprised how many more people will hear about your work.
+
+## FAIR Requirements (Technical) {#find-fair}
+
+F1. [(Meta)data are assigned a globally unique and persistent identifier](https://www.go-fair.org/fair-principles/f1-meta-data-assigned-globally-unique-persistent-identifiers/)
+
+F2. [Data are described with rich metadata](https://www.go-fair.org/fair-principles/fair-data-principles-explained/f2-data-described-rich-metadata/) (defined by R1 below)
+
+F3. [Metadata clearly and explicitly include the identifier of the data they describe](https://www.go-fair.org/fair-principles/f3-metadata-clearly-explicitly-include-identifier-data-describe/)
+
+F4. [(Meta)data are registered or indexed in a searchable resource](https://www.go-fair.org/fair-principles/f4-metadata-registered-indexed-searchable-resource/)
+
+<!--chapter:end:03-findable.Rmd-->
+
+# A - Accesible {#accessible}
+
+::: {.rmdnote data-latex="{note}"}
+
+The first step in (re)using data, text, sound recordings, films, photographs is to find them. Metadata and data should be easy to find for both humans and computers.
+
+:::
+
+
+## OPA 
+
+
+
+Share raw (or analytic) data and materials in a way that the analysis is reproducible with minimal effort. Analytic and raw data are made available through a trusted repository. We chose GitHub as a temporary repository where all our changes can be traced; and periodically we place these materials on Zenodo, where they are stored independently from our Consortium for a very long period. Detailed instructions are provided for accessing raw data that is proprietary or contains sensitive information.
+
+
+
+## Open Science (Non-technical)
+
+Digital assets are retrievable using a standardised communications protocol: 
+Most data producers will use http(s) or ftp; we only use https.
+
+The ‘A’ in FAIR does not necessarily mean ‘open’ or ‘free’. Rather, it implies that one should provide the exact conditions under which the data are accessible. ence, even heavily protected and private data can be FAIR. 
+
+Digital assets and atasets tend to degrade or disappear over time because there is a cost to maintaining an online presence for data resources. When this happens, links become invalid and users waste time hunting for data that might no longer be there. Storing the metadata generally is much easier and cheaper. Hence, principle A2 states that metadata should persist even when the data are no longer sustained. 
+
+
+## FAIR (Technical)
+
+A1. (Meta)data are retrievable by their identifier using a standardised communications protocol
+
+A1.1 [The protocol is open, free, and universally implementable](https://www.go-fair.org/fair-principles/i1-metadata-use-formal-accessible-shared-broadly-applicable-language-knowledge-representation/)
+
+- [x] We use Zenodo and Github, because they work with https.
+- [ ] A counter-examples would be Skype, Dropbox or Google Drive, which is not universally-implementable because it is proprietary
+- [ ] Microsoft Exchange Server protocol is also proprietary
+
+A1.2 [The protocol allows for an authentication and authorisation procedure, where necessary](https://www.go-fair.org/fair-principles/a1-2-protocol-allows-authentication-authorisation-required/)
+
+A2. [Metadata are accessible, even when the data are no longer available](https://www.go-fair.org/fair-principles/a2-metadata-accessible-even-data-no-longer-available/)
+
+
+<!--chapter:end:04-accessible.Rmd-->
+
+# I - Interoperabilty {#interoperability}
+
+The digital assets usually need to be integrated with other digital assets. In addition, the data need to interoperate with applications or workflows for analysis, storage, and processing.
+
+- When you write a scientific articles, you want to link references to other work; an informed reader or reviewer needs to know where to read more about what you sumamrize.
+
+- When you release a new song or album, you need to provide DSPs a photograph of the arits and some biographical and release (text context).
+
+- To calculate GPD/capita, you need to be able to successfully link GDP and population count data for the correct year, country or region.
+
+- When we create a survey program with a multi-language question bank, we need to make sure that "Concert" is correctly matched with "Konzert" and "Koncert".
+
+Interoperabilty is hard across computers, across teams, organizations, countries.  Some people use Windows systems, other Mac; some use Bulgarian (Cyrillic) characters, others Slovak or German. **Interoperability is the key to a successful team work, and a successful R&D consortium**
+
+## Tidy data
+
+Our reproducible research practice follows the tidy data principle, which has very complex computer science and information management consequences. Still, for the lay user of data, it boils down to simplicity.
+
+Tidy data is a standard way of mapping the meaning of a dataset to its structure. A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. In tidy data:
+
+- Every column is a variable. We do not use colours (our machine-to-machine pipelines is colourblind). If we need comments or specifications, we add a new column.
+- Every row is an observation. Every variable belonging to `Bulgaria` is in the `Bulgaria` row, and there is one and only `Bulgaria row`.
+- Every cell is a single value. We never merge cells! A tidy dataset has no divided columns and no divided rows.
+
+This is often far more easier to write than to do, but still, if you can make it that simple, then you already mastered Codd’s 3rd normal formframed in statistical language :)[^1].
+
+[^1]: A bit more specifically: [Tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html#:~:text=Tidy%20data%20is%20a%20standard,Every%20row%20is%20an%20observation) (informal) - [Tidy data](https://vita.had.co.nz/papers/tidy-data.html) - formal.
+.
+
+Tidy datasets are very easy to import into Excel, Google Spreadsheets, SPSS, STATA or even relational databases. Untidy texts will place you into the perpetual Data Sysiphus:  every time you need the data, you need to rearrange the rows, colors, and columns, and in the meantime, you make countless errors that your senior (quality) supervisor cannot even easily detect.
+
+> Tidy data is simple data.
+
+Most of you will not need to bother with translation to HTML or W3C compliant datacubes, or SDMX metadata codebooks, or DDI survey codebooks: this is the task of UTU and Reprex.  But you must be able to provide us with inputs in this format. This requires simplicity. 
+
+
+## Tidy text {#interoperability-tidy-text}
+
+We come from different working environments: some work only in Microsoft Word. Others only in programming consoles.  Some use Apple’s MacOS (or other BSD operational systems), others Linux or Unix distributions, and others use Windows in various versions and language editions.
+
+The world wide web made it possible for us to interlink via the http(s) protocol and the HTML text markup system documents that are in any part of the world.  The findability, access and interoperability conditions of our project (FAIR and OPA) require us to create documents that adhere to the W3C standard of the world wide web texts or similar standards applied to publications, books, datasets, and visualisations.
+
+```{r trydiliger-first}
+knitr::include_graphics(here::here("png", "dilliger_example.png"))
+```
+
+Working with tidy texts will not separate you from your favourite word processor. You can still use Grammarly in Google Docs.  You only have to make sure that your text remains simple: you refrain from adding formatting to the document if they do not adhere to a common standard that connects Windows, Mac, Unix, Word, VIM, and Posit.
+
+- [x] Simple text has clearly defined headings: title, subtitle, heading level 1, heading level 2, heading level 3.
+- [x] Simple text has standardised bibliographic references and footnotes.
+- [x] Simple text has standard section breaks and page breaks.
+- [x] Simple text allows the automatic insertion of tidy data (as defined earlier) or interoperable graphics (preferably PNG or for web use webp).
+- [x] Simple text uses only bold, italics, underline, and perhaps strikethrough highlighting.
+- [ ] Simple text has no table of contents because the table of contents is automatically generated from headings.
+- [ ] Simple text has no bibliography because it is automatically generated from standardized bibliographic entries.
+- [ ] Simple text does not use footers, headers, watermarks, color boxes, because these things need to be added differently on Word, PDF, or HTML.
+
+
+The markdown notation is a simple notation that allows a smooth translation to HTML, Word, DOC, EPUB, or any standard format.  We can create beautiful, engaging, easy-to-find, accessible and interoperable documents if we get simple inputs from you.
+
+See [Tidy text](#tidy-text) for more information.
+
+## WP2 & Listen Local
+
+## WP3 & Survey harmonization
+
+
+## Bibliography
+
+```{r onboardzotero}
+knitr::include_graphics(file.path("png", "zotero.png"))
+```
+
+- [x] We use the open source, free [Zotero](https://www.zotero.org/) research assistant. It can work with files created by Mendeley or OneNote. If you do not have a Zotero account, you should consider it after consulting our annex: [⏩ Annex / Collaboration tools / Zotero](#zotero)
+
+- [ ] For publications, we export (and slightly modify) citation data to BibLatex, a text format that is required for most scientific journal/book Tex templates. Because no research assistant exports precisely the same way, manual adjustment is always requires, so we keep up-to-date .bib collections on Github that are manually adjusted after exporting from Zotero, Mendeley, OneNote or downloaded directly from scientific libraries.
+
+
+## Euorpean 
+
+Humans should be able to exchange and interpret each other’s data, and digital assets (so preferably do not use dead languages). But this also applies to computers, meaning that data that should be readable for machines without the need for specialised or ad hoc algorithms, translators, or mappings; and this plays a crucial importance in our research, particularly :  
+
+The main goal of this principle is to provide a “common understanding” of digital objects by means of a language for knowledge representation to be used to represent these objects.
+
+
+
+## FAIR (Technical)
+
+I1. [(Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation](https://www.go-fair.org/fair-principles/i1-metadata-use-formal-accessible-shared-broadly-applicable-language-knowledge-representation)
+
+The RDF extensible knowledge representation model is a way to describe and structure datasets. You can refer to the Dublin Core Schema as an example. 
+
+I2. [(Meta)data use vocabularies that follow FAIR principles](https://www.go-fair.org/fair-principles/i2-metadata-use-vocabularies-follow-fair-principles/)
+
+When we are describing data or metadata, we often use vocabularies that provide the terms or concepts that are adequate to represent their content. 
+
+I3. [(Meta)data include qualified references to other (meta)data](https://www.go-fair.org/fair-principles/i3-metadata-include-qualified-references-metadata/)
+
+The goal therefore is to create as many meaningful links as possible between (meta)data resources to enrich the contextual knowledge about the data, balanced against the time/energy involved in making a good data model.
+
+
+
+
+<!--chapter:end:05-interoperability.Rmd-->
+
+# R - Reusabilty {#reuse}
+
+The ultimate goal of FAIR is to optimise the reuse of data. To achieve this, metadata and data should be well-described so that they can be replicated and/or combined in different settings.
+
+## Non-technical
+- Describe the scope of your data: for what purpose was it generated/collected?
+Mention any particularities or limitations about the data that other users should be aware of.
+- Specify the date of generation/collection of the data, the lab conditions, who prepared the data, the parameter settings, the name and version of the software used.
+- Is it raw or processed data?
+- Ensure that all variable names are explained or self-explanatory (i.e., defined in the research field’s controlled vocabulary).
+- Clearly specify and document the version of the archived and/or reused data.
+
+
+## FAIR (Technical)
+
+R1. [(Meta)data are richly described with a plurality of accurate and relevant attributes](https://www.go-fair.org/fair-principles/r1-metadata-richly-described-plurality-accurate-relevant-attributes/)
+
+R1.1. (Meta)data are released with a clear and accessible data usage license
+
+Under ‘I’, we covered elements of technical interoperability. R1.1 is about legal interoperability.
+
+R1.2. (Meta)data are associated with detailed provenance
+
+R1.3. (Meta)data meet domain-relevant community standards
+
+<!--chapter:end:06-reusability.Rmd-->
+
+# Open Collaboration {#open-collaboration}
+
+`Open collaboration` is any "system of innovation or production that relies on goal-oriented yet loosely coordinated participants who interact to create a product (or service) of economic value, which is made available to contributors and noncontributors alike."
+
+It is prominently observed in open source software, or the creation of TEDx and Wikipedia.
+
+- [x] goods of [economic value](#economic-value)
+- [x] [open access](#open-access) to contribute and consume
+- [x] [interaction](#interaction-exchange) and exchange 
+- [x] purposeful yet [loosely coordinated](#purposeful) work
+
+An annual conference dedicated to the research and practice of open collaboration is the International Symposium on Open Collaboration ([OpenSym](https://en.wikipedia.org/wiki/OpenSym)).
+
+## Good economic value {#economic-value}
+
+## Open Access {#open-access}
+
+
+## Interaction and Exchange {#interaction-exchange}
+
+### Simple, non-intrusive, secure communications
+
+When you work with dozens of organizations employing hundreds of people, the last thing you want to get is endless cc: emails and bcc: emails that clutter you mailbox they and night. 
+
+You also want to keep your private communications channels, like Whatsapp or Messgenger free from work messages. 
+
+**Keybase** is our preferred tool to get in touch with us and ask questions, instead of emails, Whatsapp/Viber/Messenger/Telegram/Signal, that not everybody uses, and some people use for private matters only. *Keybase* is an open-source, free, privacy- and security-concerned alternative to *Slack* and similar chat-based collaboration tools. It is fully integrated with Zoom (which owns it recently) and Google Meet, so you can switch immediately to audio or video calls. Our observatories and Listen Local have their Keybase channels where you can interact with other curators and developers. [⇨ Annex / Collaboration tools / Keybase](#keybase) [⏯ keybase.io](#https://keybase.io/)
+
+### Respectful, inclusive work environment
+
+You must abide the [⏯ Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) (but *need not send* us proof) of pledging to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation. (See [translations](https://www.contributor-covenant.org/translations/) and the related [FAQ](https://www.contributor-covenant.org/faq/).)
+
+```{r contributorcoventant}
+knitr::include_graphics(file.path("png", "contributor_covenant.png"))
+```
+
+
+## Purposeful yet loosely coordinated work {#purposeful}
+
+### Single file system that is secure and managed (overwrite) group conflicts
+
+We use GitHub, because it meats EU FAIR and OPA requirements, and works in a far more interoperable (and affordable) way than *Microsoft Sharepoint*, or *Microsoft OneDrive*, and *Google Drive*, or *Drobox* for sharing file resources.
+
+### One problem, one issue, one solution
+
+### Simple task, milestone and deadline management
+
+**Github**, a Git-based open source and free service (currently owned by Microsoft) is our tool for a very simple task tracking in a kanban-style. We use it in the [Digital Music Observatory](https://music.dataobservatory.eu/), in the [Open Collections Network](https://www.opencollections.net/) (used in Listen Local, WP2 Open Music Europe), because it complies with FAIR and OPA requirements (see earlier: [F](#findable)indable, [A](#accessible)ccessible, [I](#interoperability), [R](#reuse)reusable work), and it is free to use for most users.
+
+
+```{r}
+knitr::include_graphics(file.path("png", "anyway-kanban-gh.png"))
+```
+_Image credit: [Anyway Kanban](https://github.com/cat-street/anyway-kanban)_ 
+
+For tracking tasks, you only need a web browser and an account on Github.  All project managers in our data observatories must have one, and curators are highly encouraged to join them, too. There are thousands of alternatives for *Github's kanban*, but we use it, because it integrates well with a far better product than i.e., *Microsoft Sharepoint*, or *Microsoft OneDrive*, and *Google Drive*, or *Drobox* for sharing file resources, such a clear and processed documents, spreadsheets, SPSS files, website elements, media files.
+
+Because Github is a more advanced tool *for sharing files* than the aforementioned shared drives (it prevents the creation of conflicting versions of the same text, table or photograph), and because it integrates with a simple task management, it is also far more complicated to set-up/install and learn.  Github is a very simple for task management, to synchronize the file assets behind the tasks requires a bit of attention. But if you decide to go this way, you can build websites with us, blogs, publish journal articles, or even books. In scientific or open-source software cooperation using Github is fairly standard, so it will improve your ability to interact with colleagues. A curator does not need to use Github, unless he or she wants to cooperate on scientific outputs.  [⏯ github.com](https://github.com//)
+
+- [x] If you have an existing Github account, please give us your [⏺ Github account ID](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account) as the preferred way of exchanging files. 
+- [x] If you do not have one, please create a free account with a username that you would use professionally. 
+- [ ] Please consider synching your files via Github with us after consulting our annex: [⏩ Annex / Collaboration tools / Github](#keybase).
+- [ ] We can automate the issuing of DOI's to all your figures, code, text automatically via Zenodo and Github. 
+
+
+
+
+## Bibliography management
+
+```{r open-collab-zotero}
+knitr::include_graphics(file.path("png", "zotero.png"))
+```
+
+- [x] We use the open source, free [Zotero](https://www.zotero.org/) research assistant. It can work with files created by Mendeley or OneNote. If you do not have a Zotero account, you should consider it after consulting our annex: [⏩ Annex / Collaboration tools / Zotero](#zotero)
+
+- [ ] For publications, we export (and slightly modify) citation data to BibLatex, a text format that is required for most scientific journal/book Tex templates. Because no research assistant exports precisely the same way, manual adjustment is always requires, so we keep up-to-date .bib collections on Github that are manually adjusted after exporting from Zotero, Mendeley, OneNote or downloaded directly from scientific libraries.
+
+
+
+<!--chapter:end:07-open-collaboration.Rmd-->
+
+# Tidy Data {#tidy-data}
+
+Our reproducible research practice follows the tidy data principle, which has very complex computer science and information management consequences. Still, for the lay user of data, it boils down to simplicity.
+
+Tidy data is a standard way of mapping the meaning of a dataset to its structure. A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. 
+
+In tidy data:
+- Every column is a variable. We do not use colours (our machine-to-machine pipelines is colourblind). If we need comments or specifications, we add a new column.
+- Every row is an observation. Every variable belonging to `Bulgaria` is in the `Bulgaria` row, and there is one and only `Bulgaria row`.
+- Every cell is a single value. We never merge cells! A tidy dataset has no divided columns and no divided rows.
+
+This is often far more easier to write than to do, but still, if you can make it that simple, then you already mastered Codd’s 3rd normal formframed in statistical language.
+
+[Tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html#:~:text=Tidy%20data%20is%20a%20standard,Every%20row%20is%20an%20observation) is data in Codd’s 3rd normal form, but with the constraints framed in statistical language, and the focus put on a single dataset rather than the many connected datasets common in relational databases.
+
+Our task in `WP4` is to help tidying some datasets that are commonly used in music, and surveying, and which will be used in WP1 (linking royalty accounts with SDMX compatible statistical data), WP2 (linking various, special purpose music data resources), and WP3 (DDI survey datasets, DDI survey codebooks). See more: [dataset: Create Data Frames that are Easier to Exchange and Reuse](https://zenodo.org/record/7440192#.ZCCcz9JBzlg).
+
+
+
+<!--chapter:end:08-tidy-data.Rmd-->
+
+# Tidy Text {#tidy-text}
+
+We create interconnected, interoperable (web) resources: we want to ensure that our research results are findable, accessible, and reusable. The world wide web has been a source of high interoperability and findability in the last 30 years with the introduction of the http protocol and the standardization of the HTML text markup language.
+
+All our output needs to be converted to HTML, but that does not mean that we need to work in an HTML editor.  However, the need of interoperability among operating systems (Windows, MacOs, Linux) and software packages (at least from Word, Libre, Google Docs to HTML, preferably to PDF, too) requires a simple, common notation.
+
+Markdown is a much simplified HTML text notation intended to work well with word processors. 
+
+```{r markdownflowchart}
+knitr::include_graphics("https://mdg.imgix.net/assets/images/markdown-flowchart.png?auto=format&fit=clip&q=40&w=1080")
+```
+
+Or, if you want Word output, then instead of HTML, Word is rendered. Or PDF. Or EPUB.
+
+## Try it out {#try-markdown}
+
+There are countless Markdown editors. Because Markdown is so simple, you can, if you want to, edit markdown files in Notepad, WordPad (Windows) or VIM (Linux).
+
+Most word processors support markdown. For example, Google Docs has a [free extension](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607) that converts and document from Docs to markdown.
+
+```{r trydiliger}
+knitr::include_graphics(here::here("png", "dilliger_example.png"))
+```
+There are several online Markdown editors that you can use to try writing in Markdown. [Dillinger](https://dillinger.io/) is one of the best online Markdown editors. Just open the site and start typing in the left pane. A preview of the rendered document appears in the right pane.
+
+## Make it look good
+
+You can simplify a Word document, for example, via uploading to Google Docs and sending it through the [free extension](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607) to get a markdown document. But usually you would like to work the other way around!  It is a better practice to write a text in markdown, and when ready, add it to a nice PDF, Word, or website (blog) HTML template. This way you keep your text (and citations) simple and interoperable, and you can reuse the same text many times over. 
+
+
+## Markdown syntax
+
+- [Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+- [Extended Syntax](https://www.markdownguide.org/extended-syntax/)
+
+
+## Use your favorite application
+
+Working with tidy texts will not separate you from your favourite word processor. You can still use Grammarly in Google Docs.  You only have to make sure that your text remains simple: you refrain from adding formatting to the document if they do not adhere to a common standard that connects Windows, Mac, Unix, Word, VIM, and Posit.
+
+- [x] Simple text has clearly defined headings: title, subtitle, heading level 1, heading level 2, heading level 3.
+- [x] Simple text has standardised bibliographic references and footnotes.
+- [x] Simple text has standard section breaks and page breaks.
+- [x] Simple text allows the automatic insertion of tidy data (as defined earlier) or interoperable graphics (preferably PNG or for web use webp).
+- [x] Simple text uses only bold, italics, underline, and perhaps strikethrough highlighting.
+- [ ] Simple text has no table of contents because the table of contents is automatically generated from headings.
+- [ ] Simple text has no bibliography because it is automatically generated from standardized bibliographic entries.
+- [ ] Simple text does not use footers, headers, watermarks, color boxes, because these things need to be added differently on Word, PDF, or HTML.
+
+<!--chapter:end:09-tidy-text.Rmd-->
+
+# Collaboration tools {#collaboration-tools}
+
+
+## Keybase {#keybase}
+
+No more long emails. Nobody’s left out. No more misunderstandings. No more waiting for feedback.
+
+**What do we need?**
+
+- A simple-to-use communication tool where you can opt-in to be informed on a real time basis, or completely ignore us for days – similar to Whatsapp Group, Microsoft Teams, Google Hangout, Slack; 
+
+- A single, secure storage for shared documents  – similar to Google Drive, Microsoft One Drive, Dropbox;
+
+- An integration with Github – a critical feature to at least the part of our team that is working on software code or long-form technical documentations;
+
+- Ability to oversee communications with more than 50 people with an option to streamline per topic, group, etc.;
+
+- To avoid using emails boxes, Whatsapp, Viber, etc. – part-timers are not flooded with messages at all times, while full-timers can reach out to each other at any time;
+
+- A space where we can communicate all the time without interrupting calls and meetings with clients on other platforms;
+An integration to a project management tool that we will use for larger projects;
+
+- A tool as simple as possible, light touch;
+
+- Since we work in the open source, open data, open collaboration community, we would like to use something that is open source – but we are willing to pay for solutions.
+
+And the winner is….KEYBASE.IO
+
+Keybase is a very neat, simple, lightweight team management / chat / social networking application that is extremely focused on privacy, security and encryption.
+
+**Keybase Key features**
+
+- Secure instant messaging, even with a timed self-destruction feature (e.g. for sharing passwords);
+Starts a Google Meet or Zoom video call natively with a single command;
+- Brings your Whatsapp chat to the more private and secure keybase chat on the fly;
+
+- Team chat rooms in real time. You can filter where you want to be involved, and you can always opt-out;
+
+-K-Drive (similar to OneDrive, Google Drive, Dropbox) – only for our team, and fully encrypted;
+Works with Github, and it even offers a more private version of Private Github Repos, encrypted gits;
+An integration with other platforms;
+It is neat, open source, simple, clean, and usually appreciated more in the open source community than Slack, its big corporation rival.
+
+Practical steps you need to follow to use Keybase
+
+1. Download & install Keybase from [https://keybase.io/](https://keybase.io/) on your computer.
+
+An easy procedure. Create yourself a professional login name – similarly to a professional github account, a professional email, etc. (you cannot change the name afterwards)
+
+2. Once you log in to the computer, go to *Devices*, and *Create a paper key*. Write this on paper, or print it, and store it somewhere very safe (not near your computer). This to recover the access in case you lose access to all your devices. 
+
+3. You can use Keybase simultaneously on multiple devices – Install Keybase on your smartphone, tablet or any other device. You will be guided through installation & paired with your computer.  
+
+4. Shall you need them, you have *two recovery options*: the paper key and your smartphone.
+
+5. If your smartphone breaks down and needs a replacement, you can add from your computer your new phone and deactivate the old one.
+
+6. Once you are in, look up `antaldaniel`.
+
+7. After a handshake Daniel will assist your smooth transition, help you find ways to our shared files, your project’s files, and set up filters, so you are not flooded with information, while never left out, unless you choose to. 
+
+8. Initially, we set up the following “Big teams”, as Keybase calls them, and we will send an invitation to join: 
+- `reprexfriends` for prospective team members, friends, and hoped-for-cooperation partners – partly for people we are discreetly asking to join us, or who want to know more about some of our work and cooperate with us;
+- [reprexcommunity](https://keybase.io/team/reprexcommunity) is an open landing page for anybody, it is a public interface. If you every land there `antaldaniel` will take you to the appropriate, otherwise invisible team room. 
+
+Each big team has four special members for a smooth transition: Daniel and Zuzana to assist you with getting familiar with Keybase, zoombot (just type `!zoom` to create a Zoom call with the team members present) and meetbot (that does the same with Google Meet, `!meet`). Daniel will gradually withdraw from some of the teams, once their support is not needed, though each team will have at least one Reprex co-founder present. We invite everybody to at least one team, but you can sign up to as many as you like, shall you find that convenient. 
+
+9. Whenever you are in a situation you want to ignore us (e.g. because you sit in your dayjob), just do it. If you have a smartphone, we are there, separated from your Whatsapp friends, work emails, and you can always check on us. We can always send you a secure (and even encrypted) message to get in touch, if needed. However, we will never ever bother you with long emails, Whatsapp messages and other annoying things.
+
+*Let’s keep things short, give access to the full picture when needed, and let you find out what mix of response time, details and filters works best for you.*
+
+## Github {#github}
+
+`Git` in general, and **Github** in particular is a simultaneous collaboration for for any distributed team work - writing, programming, design work.  Git is an open source software which makes sure that your teamwork files are always synchronized, clashes are avoided (you modify the same part of a file at the same time with Daniel.) The only hard part to move to Git is to make sure that Git properly works on your computer - it needs to be installed differently on all Linux distros, Mac OSX version all Windows versions. On Windows, you must make sure that Git is on the startup path. Once you are there, you'll life will be much easier.
+
+Github is the most popular open collaboration platform for open source software editors. If you do not write code, you will not contribute to our source files, but with a Github id you ask questions, take on tasks and report them ready on our project dashboard.
+
+## Zotero{#zotero}
+
+```{r zotero}
+knitr::include_graphics(file.path("png", "zotero.png"))
+```
+
+We have shared bibliographies on the open source, free [Zotero](https://www.zotero.org/) research assistant and we have a closed bibliography repository with BibLatex files on Github for the material that refer to in open science, open policy analysis, data science, and each other's work. The best place to share readings, bibliographies is *Zotero*, for preparing publications the Github account.
+
+<!--chapter:end:11-collaboration.Rmd-->
+
+# Personal and Research Tools
+
+## Write in Markdown {write-markdown}
+
+We create web resources: we want to ensure that our research results are findable, accessible, and reusable. The world wide web has been a source of high interoperability and findability in the last 30 years with the introduction of the http protocol and the standardization of the HTML text markup language.
+
+All our output needs to be converted to HTML, but that does not mean that we need to work in an HTML editor.  However, the need of interoperability among operating systems (Windows, MacOs, Linux) and software packages (at least from Word, Libre, Google Docs to HTML, preferably to PDF, too) requires a simple, common notation.
+
+Markdown is a much simplified HTML text notation intended to work well with word processors. 
+
+```{r personal-markdownflowchart}
+knitr::include_graphics("https://mdg.imgix.net/assets/images/markdown-flowchart.png?auto=format&fit=clip&q=40&w=1080")
+```
+Or, if you want Word output, then instead of HTML, Word is rendered. Or PDF. Or EPUB.
+
+## Try it out {#try-markdown}
+
+There are countless Markdown editors. Because Markdown is so simple, you can, if you want to, edit markdown files in Notepad, WordPad (Windows) or VIM (Linux).
+
+Most word processors support markdown. For example, Google Docs has a [free extension](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607) that converts and document from Docs to markdown.
+
+```{r trydiliger-personal}
+knitr::include_graphics(here::here("png", "dilliger_example.png"))
+```
+There are several online Markdown editors that you can use to try writing in Markdown. [Dillinger](https://dillinger.io/) is one of the best online Markdown editors. Just open the site and start typing in the left pane. A preview of the rendered document appears in the right pane.
+
+## Make it look good
+
+You can simplify a Word document, for example, via uploading to Google Docs and sending it through the [free extension](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607) to get a markdown document. But usually you would like to work the other way around!  It is a better practice to write a text in markdown, and when ready, add it to a nice PDF, Word, or website (blog) HTML template. This way you keep your text (and citations) simple and interoperable, and you can reuse the same text many times over. 
+
+## Markdown syntax
+
+- [Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+- [Extended Syntax](https://www.markdownguide.org/extended-syntax/)
+
+<!--chapter:end:12-personal_tools.Rmd-->
+
+`r if (knitr:::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:50-references.Rmd-->
+
+# Technical Prerequisities
+
+
+This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
+
+The **bookdown** package can be installed from CRAN or Github:
+
+```{r eval=FALSE}
+install.packages("bookdown")
+# or the development version
+# devtools::install_github("rstudio/bookdown")
+```
+
+Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
+
+To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
+
+<!--chapter:end:91-prerequisites.Rmd-->
+

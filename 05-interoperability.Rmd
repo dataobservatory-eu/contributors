@@ -1,0 +1,102 @@
+# I - Interoperabilty {#interoperability}
+
+The digital assets usually need to be integrated with other digital assets. In addition, the data need to interoperate with applications or workflows for analysis, storage, and processing.
+
+- When you write a scientific articles, you want to link references to other work; an informed reader or reviewer needs to know where to read more about what you sumamrize.
+
+- When you release a new song or album, you need to provide DSPs a photograph of the arits and some biographical and release (text context).
+
+- To calculate GPD/capita, you need to be able to successfully link GDP and population count data for the correct year, country or region.
+
+- When we create a survey program with a multi-language question bank, we need to make sure that "Concert" is correctly matched with "Konzert" and "Koncert".
+
+Interoperabilty is hard across computers, across teams, organizations, countries.  Some people use Windows systems, other Mac; some use Bulgarian (Cyrillic) characters, others Slovak or German. **Interoperability is the key to a successful team work, and a successful R&D consortium**
+
+## Tidy data
+
+Our reproducible research practice follows the tidy data principle, which has very complex computer science and information management consequences. Still, for the lay user of data, it boils down to simplicity.
+
+Tidy data is a standard way of mapping the meaning of a dataset to its structure. A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. In tidy data:
+
+- Every column is a variable. We do not use colours (our machine-to-machine pipelines is colourblind). If we need comments or specifications, we add a new column.
+- Every row is an observation. Every variable belonging to `Bulgaria` is in the `Bulgaria` row, and there is one and only `Bulgaria row`.
+- Every cell is a single value. We never merge cells! A tidy dataset has no divided columns and no divided rows.
+
+This is often far more easier to write than to do, but still, if you can make it that simple, then you already mastered Codd’s 3rd normal formframed in statistical language :)[^1].
+
+[^1]: A bit more specifically: [Tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html#:~:text=Tidy%20data%20is%20a%20standard,Every%20row%20is%20an%20observation) (informal) - [Tidy data](https://vita.had.co.nz/papers/tidy-data.html) - formal.
+.
+
+Tidy datasets are very easy to import into Excel, Google Spreadsheets, SPSS, STATA or even relational databases. Untidy texts will place you into the perpetual Data Sysiphus:  every time you need the data, you need to rearrange the rows, colors, and columns, and in the meantime, you make countless errors that your senior (quality) supervisor cannot even easily detect.
+
+> Tidy data is simple data.
+
+Most of you will not need to bother with translation to HTML or W3C compliant datacubes, or SDMX metadata codebooks, or DDI survey codebooks: this is the task of UTU and Reprex.  But you must be able to provide us with inputs in this format. This requires simplicity. 
+
+
+## Tidy text {#interoperability-tidy-text}
+
+We come from different working environments: some work only in Microsoft Word. Others only in programming consoles.  Some use Apple’s MacOS (or other BSD operational systems), others Linux or Unix distributions, and others use Windows in various versions and language editions.
+
+The world wide web made it possible for us to interlink via the http(s) protocol and the HTML text markup system documents that are in any part of the world.  The findability, access and interoperability conditions of our project (FAIR and OPA) require us to create documents that adhere to the W3C standard of the world wide web texts or similar standards applied to publications, books, datasets, and visualisations.
+
+```{r trydiliger-first}
+knitr::include_graphics(here::here("png", "dilliger_example.png"))
+```
+
+Working with tidy texts will not separate you from your favourite word processor. You can still use Grammarly in Google Docs.  You only have to make sure that your text remains simple: you refrain from adding formatting to the document if they do not adhere to a common standard that connects Windows, Mac, Unix, Word, VIM, and Posit.
+
+- [x] Simple text has clearly defined headings: title, subtitle, heading level 1, heading level 2, heading level 3.
+- [x] Simple text has standardised bibliographic references and footnotes.
+- [x] Simple text has standard section breaks and page breaks.
+- [x] Simple text allows the automatic insertion of tidy data (as defined earlier) or interoperable graphics (preferably PNG or for web use webp).
+- [x] Simple text uses only bold, italics, underline, and perhaps strikethrough highlighting.
+- [ ] Simple text has no table of contents because the table of contents is automatically generated from headings.
+- [ ] Simple text has no bibliography because it is automatically generated from standardized bibliographic entries.
+- [ ] Simple text does not use footers, headers, watermarks, color boxes, because these things need to be added differently on Word, PDF, or HTML.
+
+
+The markdown notation is a simple notation that allows a smooth translation to HTML, Word, DOC, EPUB, or any standard format.  We can create beautiful, engaging, easy-to-find, accessible and interoperable documents if we get simple inputs from you.
+
+See [Tidy text](#tidy-text) for more information.
+
+## WP2 & Listen Local
+
+## WP3 & Survey harmonization
+
+
+## Bibliography
+
+```{r onboardzotero}
+knitr::include_graphics(file.path("png", "zotero.png"))
+```
+
+- [x] We use the open source, free [Zotero](https://www.zotero.org/) research assistant. It can work with files created by Mendeley or OneNote. If you do not have a Zotero account, you should consider it after consulting our annex: [⏩ Annex / Collaboration tools / Zotero](#zotero)
+
+- [ ] For publications, we export (and slightly modify) citation data to BibLatex, a text format that is required for most scientific journal/book Tex templates. Because no research assistant exports precisely the same way, manual adjustment is always requires, so we keep up-to-date .bib collections on Github that are manually adjusted after exporting from Zotero, Mendeley, OneNote or downloaded directly from scientific libraries.
+
+
+## Euorpean 
+
+Humans should be able to exchange and interpret each other’s data, and digital assets (so preferably do not use dead languages). But this also applies to computers, meaning that data that should be readable for machines without the need for specialised or ad hoc algorithms, translators, or mappings; and this plays a crucial importance in our research, particularly :  
+
+The main goal of this principle is to provide a “common understanding” of digital objects by means of a language for knowledge representation to be used to represent these objects.
+
+
+
+## FAIR (Technical)
+
+I1. [(Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation](https://www.go-fair.org/fair-principles/i1-metadata-use-formal-accessible-shared-broadly-applicable-language-knowledge-representation)
+
+The RDF extensible knowledge representation model is a way to describe and structure datasets. You can refer to the Dublin Core Schema as an example. 
+
+I2. [(Meta)data use vocabularies that follow FAIR principles](https://www.go-fair.org/fair-principles/i2-metadata-use-vocabularies-follow-fair-principles/)
+
+When we are describing data or metadata, we often use vocabularies that provide the terms or concepts that are adequate to represent their content. 
+
+I3. [(Meta)data include qualified references to other (meta)data](https://www.go-fair.org/fair-principles/i3-metadata-include-qualified-references-metadata/)
+
+The goal therefore is to create as many meaningful links as possible between (meta)data resources to enrich the contextual knowledge about the data, balanced against the time/energy involved in making a good data model.
+
+
+

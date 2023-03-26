@@ -1,0 +1,118 @@
+# F - Findable {#findable}
+
+::: {.rmdnote data-latex="{note}"}
+
+The first step in (re)using data, text, sound recordings, films, photographs is to find them. Metadata and data should be easy to find for both humans and computers.
+
+:::
+
+Making datasets, texts, photos, sound recordings (together: digital assets) easier to find is the first step to higher visibility, higher impact; it avoids unnecessary costs.
+
+We want to make our digital assets findable for both humans and computers (search engines, recommender systems.) You do not need to be a librarian, an archivist or web programmer to make this happen, but it requires a certain discipline in your workflows to make your assets findable.  We want to make this process practical and painless.
+
+## Think about your computer as if it was the internet
+
+What makes something easy to find on the Internet?  
+
+## Place the digital asset to the right place {#right-place}
+
+The simplest metadata, which is all so often used in our automated positions is to use the file location as information about what the file is. Is it placed in the `assets/img/` folder: it is an image asset.  Is it in the `content/event/` folder: it contains date, time, venue location and information about an event.
+
+## Use meaningful names {#meaningful-names}
+
+>There are only two hard things in Computer Science: cache invalidation and naming things.
+-- Phil Karlton
+
+Meaningful variable names (in a file), meaningful headings (which will be part of a table of contents or catalogue) and meaningful filenames are absolutely important to findability, interoperability and reusability.
+
+Using systematic names is hard.  It is very hard. We can only try to improve.  Here are a few tips:
+
+- [x] Use a clear system: avoid UpperCase letters, space, and non-ASCII characters.
+- [x] Instead of the <space>, use _ underscore or - short hyphen in a systematic way.
+
+Good file names with a path to their location contain plenty of easy to read, easy to understand metadata.
+
+`assets/img/blogposts_2023/my_favorite_playlist.png`  makes it clear that this is an image (visual) asset illustrating your favorite playlist, and it was published in a 2023 blogpost. 
+
+`content/event/2023-03-08_listen-local-lithuania` makes it clear that we find venue information, time, photos, texts about a dissemination event that took place on 2023-03-08.
+
+The trick is that our automated dissemination system turns this information into a website.  `/event/2023-03-08_listen-local-lithuania/` becames part of a URL, so that everybody can find this information in the whole wilde world. 
+
+- [ ] Avoid the use of `<space>`. Space will be translated in URLs to %20, making Listen Local Lithuania `Listen%20Local%20Lithuania`, which is difficult to read.
+
+- [ ] Avoid the use of national characters. Some browsers can read the Veronika Povilionien**ė** ė character well, others not. Some users have Lithuanian charactes, others don't. [https://lithuania.listen-local.net/musicians/veronika_povilioniene/](https://lithuania.listen-local.net/musicians/veronika_povilioniene/) makes it clear that we find information (a file) about Veronika Povilionienė here. It is the very same file on our GitHub source repository (you can add more information about here there), and in the local copy on your computer (if you forked and downloaded it.)
+
+- [ ] Avoid the use of space, again. Most of our work is done with program codes (automated), and programming languages treat the `<space>` in a special way. Variable names cannot contain space in R or Python or any language.
+
+## OPA Requirements
+
+We adhere to the Open Policy Analysis Guidelines, which aim to make your policy-related research findable to everybody in the world, not only you or your supervisor.
+
+::: {.rmdnote data-latex="{note}"}
+
+Standardise the file structure so that materials are organized in a way that is accessible to an informed reader: all project components are organized in a selfcontained folder using a Standard File Structure (SFS), and a readme file is included. 
+
+:::
+
+Our [Report on the European Music Economy](https://openmuse.dataobservatory.eu/resources/report-european-music-economy/) is being prepared from the grant proposal stage in this format.
+
+- All the files are placed [into a public repository](https://github.com/dataobservatory-eu/report-european-music-economy).  Anybody can find the files here, and suggest additions, deletions or modifications.
+
+- The repository has a public [readme](https://github.com/dataobservatory-eu/report-european-music-economy/blob/main/README.md) file. (in text view, [here](https://raw.githubusercontent.com/dataobservatory-eu/report-european-music-economy/main/README.md).)
+
+::: {.rmdnote data-latex="{note}"}
+
+Label and document each input, including data, research, and guesswork: list all inputs, and their sources, and provide links or detailed references. In practice, all our inputs are uploaded into the repositories, and they have included in the standard bibliography (.bib) files which make their citation automatic in use.
+
+:::
+
+
+
+::: {.rmdnote data-latex="{note}"}
+
+Use a version control strategy: All team members use version control software and track changes in a shared project repository. All our deliverables are delivered in a version-controlled repository.
+
+:::
+
+We use Git technology (and Microsoft's GitHub), because it offers version control for even larger groups of people.  
+
+- [x] Shared repositories with Git technology offer version control, history, conflict resolution that works on all Windows, Mac, Unix systems.
+- [ ] Google Drive and Dropbox do not offer version control and conflict resolution.
+- [ ] Microsoft's SharePoint offers such solutions, but it requires costly licenses and oversight, and do not work outside of the Microsoft universe.
+
+
+## European Open Science Requirements (non-technical)
+
+Before turning to the European FAIR requirements on **F**indability, we explain them in lay terms. While the Horizon Europe program requires full compliance with this European Open Science Cloud requirement, for most researchers and innovators it is too technical to follow.
+
+**We use globally unique and persistent identifiers:** There are many bands called `RAIN`, many Lithuanian artists `Sale`, and library catalogues know at least 33 `James Campbells`.  
+
+
+```{r orcigpng, fig.cap="All our researchers are identified with an ORCiD identifier"}
+knitr::include_graphics(file.path("png", "orcid.png"))
+```
+
+Do not have an ORCiD yet? You can register on [orcid.org](https://orcid.org/), it takes only a minute. 
+
+- [x] All our artists are identified with a VIAF, ISNI, GND or similar identifier.
+- [x] All our public documents are identified with a https URL. (Now it is becoming understanble why is the `file_location/on_your_sytem/events/2023_01_95_james_campell_release` is so important!)
+
+**We add rich metadata**. We even have a research task where we want to identify data improvement strategies!
+
+**Metadata clearly and explicitly include the identifier of the data they describe**: The metadata and the dataset they describe are usually separate files. The association between a metadata file and the dataset should be made explicit by mentioning a dataset’s globally unique and persistent identifier in the metadata.
+
+We write here about [Natas Kunas](https://lithuania.listen-local.net/solo_projects/natas_kunas/), but if you look for photos about this project, you find it [here](https://www.instagram.com/nataskunas/); you can listen to it [here](https://open.spotify.com/artist/3x6z3LboKBz0wEZk8HH47X?si=Q6bX3Fx3RGS0Eo2MGKP5xw&nd=1), and you may find further information about the artist named _Donatas Vaitkūnas_ in libraries or rights management database. We need to connect all this information, regardless if we release scientific texts, datasets, or even event invitations. This is a technical task but requires cooperation from the creators of digital files.
+
+**Digital assets are registered or indexed in a searchable resource**: we insert all our knowledge output, sound recordings, photographs, into global collections and libraries. We put visualizations on FigShare, manuscripts on Zenodo, artist information on Wikidata and Wikipedia; details of our digital assets to global library systems via OpenAIRE and Europeana, etc.
+
+If you placed correctly named, formatted files into the right place, we will take it from here.  You will be surprised how many more people will hear about your work.
+
+## FAIR Requirements (Technical) {#find-fair}
+
+F1. [(Meta)data are assigned a globally unique and persistent identifier](https://www.go-fair.org/fair-principles/f1-meta-data-assigned-globally-unique-persistent-identifiers/)
+
+F2. [Data are described with rich metadata](https://www.go-fair.org/fair-principles/fair-data-principles-explained/f2-data-described-rich-metadata/) (defined by R1 below)
+
+F3. [Metadata clearly and explicitly include the identifier of the data they describe](https://www.go-fair.org/fair-principles/f3-metadata-clearly-explicitly-include-identifier-data-describe/)
+
+F4. [(Meta)data are registered or indexed in a searchable resource](https://www.go-fair.org/fair-principles/f4-metadata-registered-indexed-searchable-resource/)

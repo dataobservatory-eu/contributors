@@ -1,0 +1,41 @@
+# A - Accesible {#accessible}
+
+::: {.rmdnote data-latex="{note}"}
+
+The first step in (re)using data, text, sound recordings, films, photographs is to find them. Metadata and data should be easy to find for both humans and computers.
+
+:::
+
+
+## OPA 
+
+
+
+Share raw (or analytic) data and materials in a way that the analysis is reproducible with minimal effort. Analytic and raw data are made available through a trusted repository. We chose GitHub as a temporary repository where all our changes can be traced; and periodically we place these materials on Zenodo, where they are stored independently from our Consortium for a very long period. Detailed instructions are provided for accessing raw data that is proprietary or contains sensitive information.
+
+
+
+## Open Science (Non-technical)
+
+Digital assets are retrievable using a standardised communications protocol: 
+Most data producers will use http(s) or ftp; we only use https.
+
+The ‘A’ in FAIR does not necessarily mean ‘open’ or ‘free’. Rather, it implies that one should provide the exact conditions under which the data are accessible. ence, even heavily protected and private data can be FAIR. 
+
+Digital assets and atasets tend to degrade or disappear over time because there is a cost to maintaining an online presence for data resources. When this happens, links become invalid and users waste time hunting for data that might no longer be there. Storing the metadata generally is much easier and cheaper. Hence, principle A2 states that metadata should persist even when the data are no longer sustained. 
+
+
+## FAIR (Technical)
+
+A1. (Meta)data are retrievable by their identifier using a standardised communications protocol
+
+A1.1 [The protocol is open, free, and universally implementable](https://www.go-fair.org/fair-principles/i1-metadata-use-formal-accessible-shared-broadly-applicable-language-knowledge-representation/)
+
+- [x] We use Zenodo and Github, because they work with https.
+- [ ] A counter-examples would be Skype, Dropbox or Google Drive, which is not universally-implementable because it is proprietary
+- [ ] Microsoft Exchange Server protocol is also proprietary
+
+A1.2 [The protocol allows for an authentication and authorisation procedure, where necessary](https://www.go-fair.org/fair-principles/a1-2-protocol-allows-authentication-authorisation-required/)
+
+A2. [Metadata are accessible, even when the data are no longer available](https://www.go-fair.org/fair-principles/a2-metadata-accessible-even-data-no-longer-available/)
+

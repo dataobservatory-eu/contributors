@@ -1,0 +1,34 @@
+# Personal and Research Tools
+
+## Write in Markdown {write-markdown}
+
+We create web resources: we want to ensure that our research results are findable, accessible, and reusable. The world wide web has been a source of high interoperability and findability in the last 30 years with the introduction of the http protocol and the standardization of the HTML text markup language.
+
+All our output needs to be converted to HTML, but that does not mean that we need to work in an HTML editor.  However, the need of interoperability among operating systems (Windows, MacOs, Linux) and software packages (at least from Word, Libre, Google Docs to HTML, preferably to PDF, too) requires a simple, common notation.
+
+Markdown is a much simplified HTML text notation intended to work well with word processors. 
+
+```{r personal-markdownflowchart}
+knitr::include_graphics("https://mdg.imgix.net/assets/images/markdown-flowchart.png?auto=format&fit=clip&q=40&w=1080")
+```
+Or, if you want Word output, then instead of HTML, Word is rendered. Or PDF. Or EPUB.
+
+## Try it out {#try-markdown}
+
+There are countless Markdown editors. Because Markdown is so simple, you can, if you want to, edit markdown files in Notepad, WordPad (Windows) or VIM (Linux).
+
+Most word processors support markdown. For example, Google Docs has a [free extension](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607) that converts and document from Docs to markdown.
+
+```{r trydiliger-personal}
+knitr::include_graphics(here::here("png", "dilliger_example.png"))
+```
+There are several online Markdown editors that you can use to try writing in Markdown. [Dillinger](https://dillinger.io/) is one of the best online Markdown editors. Just open the site and start typing in the left pane. A preview of the rendered document appears in the right pane.
+
+## Make it look good
+
+You can simplify a Word document, for example, via uploading to Google Docs and sending it through the [free extension](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607) to get a markdown document. But usually you would like to work the other way around!  It is a better practice to write a text in markdown, and when ready, add it to a nice PDF, Word, or website (blog) HTML template. This way you keep your text (and citations) simple and interoperable, and you can reuse the same text many times over. 
+
+## Markdown syntax
+
+- [Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+- [Extended Syntax](https://www.markdownguide.org/extended-syntax/)

@@ -1,0 +1,24 @@
+# R - Reusabilty {#reuse}
+
+The ultimate goal of FAIR is to optimise the reuse of data. To achieve this, metadata and data should be well-described so that they can be replicated and/or combined in different settings.
+
+## Non-technical
+- Describe the scope of your data: for what purpose was it generated/collected?
+Mention any particularities or limitations about the data that other users should be aware of.
+- Specify the date of generation/collection of the data, the lab conditions, who prepared the data, the parameter settings, the name and version of the software used.
+- Is it raw or processed data?
+- Ensure that all variable names are explained or self-explanatory (i.e., defined in the research field’s controlled vocabulary).
+- Clearly specify and document the version of the archived and/or reused data.
+
+
+## FAIR (Technical)
+
+R1. [(Meta)data are richly described with a plurality of accurate and relevant attributes](https://www.go-fair.org/fair-principles/r1-metadata-richly-described-plurality-accurate-relevant-attributes/)
+
+R1.1. (Meta)data are released with a clear and accessible data usage license
+
+Under ‘I’, we covered elements of technical interoperability. R1.1 is about legal interoperability.
+
+R1.2. (Meta)data are associated with detailed provenance
+
+R1.3. (Meta)data meet domain-relevant community standards

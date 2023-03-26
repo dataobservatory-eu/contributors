@@ -1,18 +1,25 @@
 bookdown::gitbook:
-  css: style.css
+  css: [css/style.css, css/box.css]
   config:
     toc:
       before: |
-        <li><a href="./">A Minimal Book Example</a></li>
+        <li><a href="./">Contributors' Manual for the Data Observatories and Open Collections</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
+        <li><a href="https://manual.dataobservatory.eu/" target="blank">Published with bookdown</a></li>
+    edit: https://github.com/dataobservatory-eu/contributors/edit/master/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:
+  extra_dependencies: awesomebox
+  language: english
+  toc: true
+  tof: true
+  toc_unnumbered: no
   includes:
-    in_header: preamble.tex
+    keep_tex: true
+    in_header: [latex/preamble.tex, latex/blackbox.tex, latex/infobox.tex, latex/bluebox.tex]
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
-bookdown::epub_book: default
+bookdown::epub_book:
+  stylesheet: [css/style.css, css/box.css]
 bookdown::bs4_book: default
