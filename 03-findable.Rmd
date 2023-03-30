@@ -36,11 +36,11 @@ Good file names with a path to their location contain plenty of easy to read, ea
 
 `content/event/2023-03-08_listen-local-lithuania` makes it clear that we find venue information, time, photos, texts about a dissemination event that took place on 2023-03-08.
 
-The trick is that our automated dissemination system turns this information into a website.  `/event/2023-03-08_listen-local-lithuania/` becames part of a URL, so that everybody can find this information in the whole wilde world. 
+The trick is that our automated dissemination system turns this information into a website.  `/event/2023-03-08_listen-local-lithuania/` becames part of a URL, so that everybody can find this information in the whole wide world. 
 
 - [ ] Avoid the use of `<space>`. Space will be translated in URLs to %20, making Listen Local Lithuania `Listen%20Local%20Lithuania`, which is difficult to read.
 
-- [ ] Avoid the use of national characters. Some browsers can read the Veronika Povilionien**ė** ė character well, others not. Some users have Lithuanian charactes, others don't. [https://lithuania.listen-local.net/musicians/veronika_povilioniene/](https://lithuania.listen-local.net/musicians/veronika_povilioniene/) makes it clear that we find information (a file) about Veronika Povilionienė here. It is the very same file on our GitHub source repository (you can add more information about here there), and in the local copy on your computer (if you forked and downloaded it.)
+- [ ] Avoid the use of national characters. Some browsers can read the Veronika Povilionien**ė** ė character well, others not. Some users have Lithuanian characters, others don't. [https://lithuania.listen-local.net/musicians/veronika_povilioniene/](https://lithuania.listen-local.net/musicians/veronika_povilioniene/) makes it clear that we find information (a file) about Veronika Povilionienė here. It is the very same file on our GitHub source repository (you can add more information about here there), and in the local copy on your computer (if you forked and downloaded it.)
 
 - [ ] Avoid the use of space, again. Most of our work is done with program codes (automated), and programming languages treat the `<space>` in a special way. Variable names cannot contain space in R or Python or any language.
 
@@ -85,7 +85,7 @@ We use Git technology (and Microsoft's GitHub), because it offers version contro
 
 Before turning to the European FAIR requirements on **F**indability, we explain them in lay terms. While the Horizon Europe program requires full compliance with this European Open Science Cloud requirement, for most researchers and innovators it is too technical to follow.
 
-**We use globally unique and persistent identifiers:** There are many bands called `RAIN`, many Lithuanian artists `Sale`, and library catalogues know at least 33 `James Campbells`.  
+**We use globally unique and persistent identifiers:** There are many bands called `RAIN`, many Lithuanian artists `Saulė`, and library catalogues know at least 33 `James Campbells`.  
 
 
 ```{r orcigpng, fig.cap="All our researchers are identified with an ORCiD identifier"}

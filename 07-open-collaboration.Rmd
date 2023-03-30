@@ -20,7 +20,7 @@ An annual conference dedicated to the research and practice of open collaboratio
 
 ### Simple, non-intrusive, secure communications
 
-When you work with dozens of organizations employing hundreds of people, the last thing you want to get is endless cc: emails and bcc: emails that clutter you mailbox they and night. 
+When you work with dozens of organizations employing hundreds of people, the last thing you want to get is endless cc: emails and bcc: emails that clutter your mailbox day and night. 
 
 You also want to keep your private communications channels, like Whatsapp or Messgenger free from work messages. 
 
@@ -73,6 +73,6 @@ knitr::include_graphics(file.path("png", "zotero.png"))
 
 - [x] We use the open source, free [Zotero](https://www.zotero.org/) research assistant. It can work with files created by Mendeley or OneNote. If you do not have a Zotero account, you should consider it after consulting our annex: [⏩ Annex / Collaboration tools / Zotero](#zotero)
 
-- [ ] For publications, we export (and slightly modify) citation data to BibLatex, a text format that is required for most scientific journal/book Tex templates. Because no research assistant exports precisely the same way, manual adjustment is always requires, so we keep up-to-date .bib collections on Github that are manually adjusted after exporting from Zotero, Mendeley, OneNote or downloaded directly from scientific libraries.
+- [ ] For publications, we export (and slightly modify) citation data to BibLatex, a text format that is required for most scientific journal/book Tex templates. Because no research assistant exports precisely the same way, manual adjustment is always required, so we keep up-to-date .bib collections on Github that are manually adjusted after exporting from Zotero, Mendeley, OneNote or downloaded directly from scientific libraries.
 
 
