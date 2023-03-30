@@ -12,6 +12,13 @@ OPA Level 3: All project components are organized in a selfcontained folder usin
 
 We use a standardized file system that is standard in the R open statistical environment.  While it is an R standard, it is not unusual for researchers using Python or another programming language for their work.
 
+```{r, echo=FALSE, fig.cap="All project components are organized in a selfcontained folder using a Standard File Structure (SFS), and a readme file is included."}
+
+knitr::include_graphics(file.path("webp", "screenshot_contributors_repo.webp"))
+
+```
+
+
 ## Ignored files in .gitignore
 We place a list of folders and files that are ignored for synchronization from the user’s client computer to Github and beyond.  These are usually passwords, login credentials, project management or log files used by your IDE or other work environment.  We by default, excluded all Posit/RStudio standards, and usually all Jupiter Notebook standards, and a few Windows/Mac specific files.
 We also ignore a standard folder called `not_included`,  which serves as the place of your personal scrapbook, sandbox, that you do not want to share with anybody.

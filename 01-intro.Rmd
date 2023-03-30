@@ -33,14 +33,15 @@ Open Music Europe furthermore ensures that all materials, analysis, and outputs 
 
 In Europe, the European Commission launched the  platform, along with several initiatives to make EU-funded research more accessible, notably, with changing some financial guidelines for its research program, and amending the [Open Data Directive](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32019L1024) in 2019.
 
-<<<<<<< HEAD
-The subsequent chapters of this Manual show how we will comply with both FAIR and OPA by making our documents and files [Findable](#findable) in a way that meets open policy analysis compliance, make them [Interoperable](#interoperability) for machines and researchers,[Accessible](#accessible) for human and algorithms, and [Reusable](#reuse) for human and automated use.
-=======
-
 The subsequent chapters of this Manual show how we will comply with both FAIR and OPA by making our documents and files [Findable](#findable) in a way that meets open policy analysis compliance, make them [Interoperable](#interoperability) for machines and researchers, [Accessible](#accessible) for human and algorithms, and [Reusable](#reuse) for human and automated use.
->>>>>>> 8cd2137f009c7e786439bfe7f420a8fe7aff9e1d
 
 These efforts toward radical transparency will help ensure open deliberation and consensus-forming among stakeholders. Putting evidence-based policymaking into practice in music research, we will establish a precedent for its incorporation as a keystone of the social sciences and digital humanities more broadly.
+
+## OPA 
+
+The [OPA Guidelines](https://www.bitss.org/opa/community-standards/) feature nine steps for implementation, grouped by their relation to the three key principles of OPA: `Open Output`, `Open Analysis`, and `Open Materials`. Each step is modular, meaning it can be implemented independently from the rest, and features three gradual levels of rigor.  Analysts can adopt each step at varying levels of rigor, depending on what is appropriate for their work. Status quo in policy analysis practices should be interpreted as Level 0.
+
+You can become a signatory of the `OPA Guidelines` by adding your name (or the name of your organization, if you sign as an organizational representative) to [this form](https://docs.google.com/forms/d/e/1FAIpQLSdn63GXNpK6CsggWg_0Z0MrhE9zPuKmv8rocoEfsDrScRdaLQ/viewform) and including a statement in policy reports indicating they were developed in accordance with the OPA Guidelines (e.g., “This analysis complies with level 3 of the Open Policy Analysis (OPA) Guidelines developed by BITSS”). Second, you can submit your feedback to these Guidelines to [BITSS Project](https://www.bitss.org/opa/community-standards/).
 
 ## Documents, Word Processing, Manuscripts, Blogposts
 

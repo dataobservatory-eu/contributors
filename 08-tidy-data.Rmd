@@ -4,6 +4,11 @@ Our reproducible research practice follows the tidy data principle, which has ve
 
 Tidy data is a standard way of mapping the meaning of a dataset to its structure. A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. 
 
+```{r, echo=FALSE, fig.cap="Following three rules makes a dataset tidy: variables are in columns, observations are in rows, and values are in cells. From [R For Data Science - 12. Tidy Data](https://r4ds.had.co.nz/tidy-data.html)"}
+knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png")
+```
+
+
 In tidy data:
 - Every column is a variable. We do not use colours (our machine-to-machine pipelines is colourblind). If we need comments or specifications, we add a new column.
 - Every row is an observation. Every variable belonging to `Bulgaria` is in the `Bulgaria` row, and there is one and only `Bulgaria row`.
@@ -12,6 +17,11 @@ In tidy data:
 This is often far more easier to write than to do, but still, if you can make it that simple, then you already mastered Codd’s 3rd normal formframed in statistical language.
 
 [Tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html#:~:text=Tidy%20data%20is%20a%20standard,Every%20row%20is%20an%20observation) is data in Codd’s 3rd normal form, but with the constraints framed in statistical language, and the focus put on a single dataset rather than the many connected datasets common in relational databases.
+
+```{r, echo=FALSE, fig.cap="Tidy data always has two forms: wide and long. From [R For Data Science - 12. Tidy Data](https://r4ds.had.co.nz/tidy-data.html)."}
+knitr::include_graphics('https://d33wubrfki0l68.cloudfront.net/3aea19108d39606bbe49981acda07696c0c7fcd8/2de65/images/tidy-9.png')
+```
+
 
 Our task in `WP4` is to help tidying some datasets that are commonly used in music, and surveying, and which will be used in WP1 (linking royalty accounts with SDMX compatible statistical data), WP2 (linking various, special purpose music data resources), and WP3 (DDI survey datasets, DDI survey codebooks). See more: [dataset: Create Data Frames that are Easier to Exchange and Reuse](https://zenodo.org/record/7440192#.ZCCcz9JBzlg).
 

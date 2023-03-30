@@ -1,0 +1,113 @@
+# Publishing {#publishing}
+
+## Web Publishing
+Our publishing tools are standard and open source.  We create websites that use standard HTML, and CSS, with some light JavaScript. We use automation to generate these (static) websites from simple assets.
+
+- [x] Tidy text (see \@ref(tidy-text)), or markdown text, can be edited with any word processor or text editor.
+
+- [x] Standard PNG files (if needed, JPEG files), or, Webp files, which are much faster in browsers.
+
+- [x] We use standard bibliographic references (.bib) files with BibLatex. BibLatex can be edited with any editor, but it is best exported from your favorite citation management tool.
+
+- [x] We create presentations using only HTML, CSS, and some light Javascript (the reveal.js library.)
+
+Naturally, you can upload any pptx, docs, epub or pdf files to our websites. 
+
+The post [Cooperation with the Slovak Ministry of Culture and Other Slovak Partners](https://openmuse.dataobservatory.eu/post/2023-03-06_music-observatory-in-slovakia/) is created from the simple, tidy markdown text above that you can check out in our standard file system [here](https://raw.githubusercontent.com/dataobservatory-eu/openmuse.dataobservatory.eu/main/content/post/2023-03-06_music-observatory-in-slovakia/index.md).
+
+```{r, echo=FALSE, message=FALSE, "Screenshot: Editing a webiste page." }
+knitr::include_graphics(file.path('webp', 'screenshot_post_source_code.webp'))
+```
+
+ 
+
+The top part is using [YAML](https://yaml.org/):
+
+`YAML: YAML Ain't Markup Language™`
+
+`What It Is:`
+`YAML is a human-friendly data serialization`
+`language for all programming languages.`
+
+It is a simple, machine-readable, but easily human-readable instruction for the computer about how to process the file.
+
+Then, below the three `-` signs
+
+`---`
+
+Comes the text of the post. You can read in chapter @\ref(#tidy-text) how to edit the post itself.
+
+## Automation
+
+Our websites use hugo, an open-source static website creator system programmed in the (open-source) go language developed by Google.  It is designed to develop websites that are easy to build, and work efficiently on the internet: they are easy to find and connect well with different web resources. 
+
+You can run hugo on Window, Mac, or Linux systems. Hugo builds websites from standard file systems containing simple markdown texts, PNG/JPEG/WEBP images, with so called shortcodes.  The [shortcodes](https://wowchemy.com/docs/content/writing-markdown-latex/) are repeating small tasks that are written in the go language to work fast and easy.  
+
+For example 
+
+`{{< youtube w7Ft2ymGmfc >}}`
+
+embeds a YouTube video into a web page.
+
+We use the [wowchemy](https://wowchemy.com/templates/) academic and research group templates.  It is an awesome, free work that helps countless academic and researchers to make their work connect to other on the net.  We pay a small donation to wowchemy, and they deserve your endorsement and donations, too.
+
+The template was slightly modified (contextualized) by Reprex. 
+
+
+::: {.rmdnote data-latex="{note}"}
+
+Our websites are built with the help of hugo from our standard file system (see \@ref(sfs)), simply a GitHub repository (at [this](https://github.com/dataobservatory-eu/openmuse.dataobservatory.eu) address.)  So, our research website complies with the level 3 of the `Open Policy Analysis Guidelines` and the `FAIR` requirements. 
+
+:::
+
+You can “fork” the open source of our entire website, download it, and you can rebuild our entire website on our own computer, you can even modify it! 
+
+```{r, echo=FALSE, message=FALSE, fig.cap="You can copy and download our entire website with source files and assets."}
+knitr::include_graphics(file.path("webp", "screenshot_fork_the_website_source.webp"))
+```
+
+Each page (blogpost, event, author profile, info page) is made from a standard markdown file that you can modify with any word processor or text editor.  Every page has a YAML header containing the page metadata for machine reading (what should be the title, subtitle, thumbnail image, etc.)  If you want to suggest changes, make corrections, or write new content, you can do it with many different software tools.  
+
+```{r, echo=FALSE, message=FALSE, fig.cap="We use [RStudio](https://posit.co/download/rstudio-desktop/) from Posit, but you can use any editor."}
+knitr::include_graphics(file.path("webp", "screenshot_install_r_studio.webp"))
+```
+
+
+We use [RStudio](https://posit.co/download/rstudio-desktop/) from Posit, but you can use any editor. Technically you do not even need to be able to run hugo on your computer. However, without hugo you cannot visually check if your changes make sense.  
+
+
+
+If you run hugo on your computer, you can immediately check if your changes appear in the right place, form, and with the correct text.  Then you can send these changes to our master folder, or repository with a pull request on GitHub. After approval, they will build on our server exactly the same way they were showing up on your computer if you tried it out with a locally running hugo server. 
+
+```{r, echo=FALSE, mesage=FALSE, fig.cap="You can install [hugo](https://gohugo.io/installation/) on any major computer operating system. However, if you use RStudio, we recommend that you install it with blogdown::install_hugo()"}
+knitr::include_graphics(file.path("webp", "screenshot_install_hugo.webp"))
+```
+
+
+Behind the scenes, from simple PNG-WEBP-JPEG files, and simple, tidy text, hugo (with the help of open source go language scripts) writes HTML, CSS, and Javascript coding to weave your text and illustration into a website that is well connected to other web resources.  While you could technically check every step under the hoods, you can also leave it as a black box and just think about it as an automated system that creates a website.
+
+All aspects of our website are open source.  You can re-use the engine, and the template, and you can reuse all the contents following the appropriate Creative Commons Licenses.
+
+
+::: {.rmdnote data-latex="{note}"}
+
+You can have an entire copy of our website templates, automation code, and the contents itself in your GitHub account, or in a downloaded (pulled) version on your computer.  You cannot claim that you wrote it, and you must keep attributions to [wowchemy](https://wowchemy.com/) (for the template), [Reprex](https://reprex.nl/) (for this actual setup), and each picture or text to its author.  You should be particularly careful reusing the contributor partner logos, and you cannot make the impression that you represent them (unless, of course, if you do!).
+
+:::
+
+
+
+
+
+## Downloadable files
+
+```{r, echo=FALSE, message=FALSE, fig.cap="Static downloadable files in our website repository."}
+knitr::include_graphics(file.path("webp", "screenshot_static_folder_in_sfs.webp"))
+```
+
+
+- [x] We prefer PDF, pptx, docs, epub, xlsx files that were created by our own open source code because we know for certain what went into them (reproducibility and reviewability) and we can write so-called unit tests to search for frequent or typical mistakes. 
+
+- [x] When we generate the PDF, pptx, docs, epub, xlsx or other files, we caensureat they contain the correct metadata for optimal findability, interoperability, and reusability.
+
+- [x] You can find/modify/place all downloadable files in the `static` subfolder of the webiste [source repository](https://github.com/dataobservatory-eu/openmuse.dataobservatory.eu).
