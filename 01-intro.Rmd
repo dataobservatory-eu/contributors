@@ -4,7 +4,7 @@
 
 [Open Music Europe](https://openmuse.dataobservatory.eu/) aims to contribute to the aim of creating a decentralised European intelligence hub where centralised data collection and analysis have failed in the music industry during the past 20 years. 
 
-We envision the Open Data Observatory as a decentralised, complementary service to the ESSnet system (Eurostat and the national statistics offices) and the planned, centralised European Music Observatory (EMO). [...]  We plan to implement the Open Data Observatory as an open-source, public-facing solution working in synergy with the EMO. 
+We envision the Open Data Observatory as a decentralised, complementary service to the ESSnet system (Eurostat and the national statistics offices) and the planned, centralised European Music Observatory (EMO). […]  We plan to implement the Open Data Observatory as an open-source, public-facing solution working in synergy with the EMO. 
 
 We will create `reproducible` “dynamic policy documents” that can be transferred from one country to another or scaled up from one country to a group of countries or even the entire European Union, and recast with little effort after the inception of new data every year, due to their very high level of data/output standardisation and interoperability. 
 
@@ -32,7 +32,6 @@ knitr::include_graphics(file.path("webp", "opa_framework.webp"))
 Open Music Europe furthermore ensures that all materials, analysis, and outputs meet the `FAIR principles` enshrined in Horizon Europe and the EU’s open science agenda and will be submitted as best practices to the*Knowledge4Policy* [K4P](https://knowledge4policy.ec.europa.eu/home_en) Portal horizontal knowledge areas on Evidence-Informed Policy Making, Composite Indicators, Modelling, and AI Watch. 
 
 In Europe, the European Commission launched the  platform, along with several initiatives to make EU-funded research more accessible, notably, with changing some financial guidelines for its research program, and amending the [Open Data Directive](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32019L1024) in 2019.
-
 
 The subsequent chapters of this Manual show how we will comply with both FAIR and OPA by making our documents and files [Findable](#findable) in a way that meets open policy analysis compliance, make them [Interoperable](#interoperability) for machines and researchers,[Accessible](#accessible) for human and algorithms, and [Reusable](#reuse) for human and automated use.
 
