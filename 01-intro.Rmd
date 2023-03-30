@@ -29,11 +29,16 @@ Each level must be fully replicable. Establishing a clear link between input and
 knitr::include_graphics(file.path("webp", "opa_framework.webp"))
 ```
 
-Open Music Europe furthermore ensures that all materials, analysis, and outputs meet the `FAIR principles` enshrined in Horizon Europe and the EU’s open science agenda and will be submitted as best practices to the*Knowledge4Policy* [K4P](https://knowledge4policy.ec.europa.eu/home_en) Portal horizontal knowledge areas on Evidence-Informed Policy Making, Composite Indicators, Modelling, and AI Watch. 
+Open Music Europe furthermore ensures that all materials, analysis, and outputs meet the `FAIR principles` enshrined in Horizon Europe and the EU’s open science agenda and will be submitted as best practices to the *Knowledge4Policy* [K4P](https://knowledge4policy.ec.europa.eu/home_en) Portal horizontal knowledge areas on Evidence-Informed Policy Making, Composite Indicators, Modelling, and AI Watch. 
 
 In Europe, the European Commission launched the  platform, along with several initiatives to make EU-funded research more accessible, notably, with changing some financial guidelines for its research program, and amending the [Open Data Directive](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32019L1024) in 2019.
 
+<<<<<<< HEAD
 The subsequent chapters of this Manual show how we will comply with both FAIR and OPA by making our documents and files [Findable](#findable) in a way that meets open policy analysis compliance, make them [Interoperable](#interoperability) for machines and researchers,[Accessible](#accessible) for human and algorithms, and [Reusable](#reuse) for human and automated use.
+=======
+
+The subsequent chapters of this Manual show how we will comply with both FAIR and OPA by making our documents and files [Findable](#findable) in a way that meets open policy analysis compliance, make them [Interoperable](#interoperability) for machines and researchers, [Accessible](#accessible) for human and algorithms, and [Reusable](#reuse) for human and automated use.
+>>>>>>> 8cd2137f009c7e786439bfe7f420a8fe7aff9e1d
 
 These efforts toward radical transparency will help ensure open deliberation and consensus-forming among stakeholders. Putting evidence-based policymaking into practice in music research, we will establish a precedent for its incorporation as a keystone of the social sciences and digital humanities more broadly.
 
@@ -97,11 +102,11 @@ Our long term storage is [Zenodo](), the repository system of [OpenAIRE](https:/
 CERN, the European Organization for Nuclear Research.
 
 Zenodo is an extremely useful tool:
-- [x] It places directly into global library catalogues our work, if it is high-enough capacity
+- [x] It places our work directly into global library catalogues, if it is high-enough capacity
 - [x] It connects it to people who cite us, it connects it with similar books, articles, datasets
 - [x] It provides for a truly open an interoperable access point.
 
-Yet, it is no exception to the garbe-in-garbage-out principle. In WP4 we develop tools that helps to make out a lot more from your blogposts, presentations, manuscripts, final articles, and datasets on Zenodo and the global knowledge graphs. See more in \@ref(tidy-data) [Tidy data](#tidy-data).
+Yet, it is no exception to the garbage-in-garbage-out principle. In WP4 we develop tools that helps to make out a lot more from your blogposts, presentations, manuscripts, final articles, and datasets on Zenodo and the global knowledge graphs. See more in \@ref(tidy-data) [Tidy data](#tidy-data).
 
 ```{r}
 knitr::include_graphics(file.path("webp", "report-european-music-economy_0_1.webp"))
