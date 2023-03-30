@@ -1,10 +1,10 @@
 # I - Interoperabilty {#interoperability}
 
-The digital assets usually need to be integrated with other digital assets. In addition, the data need to interoperate with applications or workflows for analysis, storage, and processing.
+The digital assets usually need to be integrated with other digital assets. In addition, the data needs to interoperate with applications or workflows for analysis, storage, and processing.
 
-- When you write a scientific articles, you want to link references to other work; an informed reader or reviewer needs to know where to read more about what you sumamrize.
+- When you write a scientific article, you want to link references to other work; an informed reader or reviewer needs to know where to read more about what you summarize.
 
-- When you release a new song or album, you need to provide DSPs a photograph of the arits and some biographical and release (text context).
+- When you release a new song or album, you need to provide DSPs, a photograph of the artist and some biographical and release information (text context).
 
 - To calculate GPD/capita, you need to be able to successfully link GDP and population count data for the correct year, country or region.
 
@@ -76,9 +76,9 @@ knitr::include_graphics(file.path("png", "zotero.png"))
 - [ ] For publications, we export (and slightly modify) citation data to BibLatex, a text format that is required for most scientific journal/book Tex templates. Because no research assistant exports precisely the same way, manual adjustment is always requires, so we keep up-to-date .bib collections on Github that are manually adjusted after exporting from Zotero, Mendeley, OneNote or downloaded directly from scientific libraries.
 
 
-## Euorpean 
+## European 
 
-Humans should be able to exchange and interpret each other’s data, and digital assets (so preferably do not use dead languages). But this also applies to computers, meaning that data that should be readable for machines without the need for specialised or ad hoc algorithms, translators, or mappings; and this plays a crucial importance in our research, particularly :  
+Humans should be able to exchange and interpret each other’s data, and digital assets (so preferably do not use dead languages). But this also applies to computers, meaning that data should be readable for machines without the need for specialised or ad hoc algorithms, translators, or mappings; and this plays a crucial importance in our research, particularly :  
 
 The main goal of this principle is to provide a “common understanding” of digital objects by means of a language for knowledge representation to be used to represent these objects.
 

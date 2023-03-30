@@ -20,7 +20,7 @@ Share raw (or analytic) data and materials in a way that the analysis is reprodu
 Digital assets are retrievable using a standardised communications protocol: 
 Most data producers will use http(s) or ftp; we only use https.
 
-The ‘A’ in FAIR does not necessarily mean ‘open’ or ‘free’. Rather, it implies that one should provide the exact conditions under which the data are accessible. ence, even heavily protected and private data can be FAIR. 
+The ‘A’ in FAIR does not necessarily mean ‘open’ or ‘free’. Rather, it implies that one should provide the exact conditions under which the data are accessible. Hence, even heavily protected and private data can be FAIR. 
 
 Digital assets and atasets tend to degrade or disappear over time because there is a cost to maintaining an online presence for data resources. When this happens, links become invalid and users waste time hunting for data that might no longer be there. Storing the metadata generally is much easier and cheaper. Hence, principle A2 states that metadata should persist even when the data are no longer sustained. 
 
