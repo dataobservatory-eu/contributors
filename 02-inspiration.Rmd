@@ -6,7 +6,7 @@ To become a data curator, you do not need to be a data scientist, a statistician
 
 ### No Data is Available: This Scientist Stung Himself With Dozens Of Insects Because No One Else Would
 
-```{r}
+```{r schmidpain}
 knitr::include_graphics(file.path("png", "schmidt_pain_index.png"))
 ```
 
