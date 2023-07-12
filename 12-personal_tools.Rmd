@@ -59,6 +59,8 @@ A `.bib` file is a text file that you can edit in Notepad or WordPad on Windows,
 
 The first thing you see in `bib/example.bib` that it is a book (`@book`).  Other usual formatting options are `@misc` for any document, `@article` for a journal article, website for a website, etc.  If your document has an `ISBN`, it should always be reported as a book because the easiest matching of the bibliographic entry with the actual source is via International Standard Book Number (ISBN).
 
+Download the example bib from our repository:</br> [https://github.com/dataobservatory-eu/contributors/blob/main/bib/opa.bib](https://github.com/dataobservatory-eu/contributors/blob/main/bib/opa.bib)---press the 'Raw' button to exit the web preview and get the file as it is.
+
 Spaces, like in most programming languages, are not processed. `urldate = {2023-07-12}` and `urldate= {2023-07-12}` and `urldate={2023-07-12}` are identical in meaning. Use a consistent editing for readability.
 
 ### Basic biblatex formatting

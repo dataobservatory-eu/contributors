@@ -3,7 +3,19 @@ title: "Contributors Guidebook for the Data Observatories and Open Collections"
 author: "Daniel Antal"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
+output:
+  bookdown::gitbook: default
+  bookdown::word_document2:
+    toc: false
+    #reference_docx: templates/Horizon_Europe_template.docx
+    language: English
+  bookdown::epub_book: default
+  bookdown::pdf_book:
+    language: english
+    toc: true
+    tof: true
+    includes:
+      keep_tex: true
 documentclass: book
 bibliography: 
 - book.bib
@@ -12,7 +24,14 @@ bibliography:
 - bib/opendata.bib
 - bib/openscience.bib
 biblio-style: apalike
-link-citations: yes
+classoption: openany, a4paper, oneside
+lang: en
+papersize: a4
+fontsize: "fontsize=12pt"
+linestretch: 1.1
+urlcolor: blue
+linkcolor: blue
+geometry: "left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm"
 github-repo: dataobservatory-eu/contributors
 description: "Contributors Guidebook for the Data Observatories and Open Collections."
 ---
@@ -45,6 +64,8 @@ Big data creates **inequalities**, because only the world’s biggest global cor
 :::
 
 This handbook is made for people working together in an [open collaboration](#open-collaboration) on the [Digital Music Observatory](https://music.dataobservatory.eu/) and its funded projects, [Listen Local Lithuania](https://lithuania.listen-local.net/), [Eviota](https://music.dataobservatory.eu/project/musiceviota/), [SurveyHarmonies](https://www.sinus-institut.de/en/sinus-institut/case-studies/surveyharmonies) and [Open Music Europe](https://music.dataobservatory.eu/project/openmusiceurope/); the connecting [Open Collection Network](https://www.opencollections.net/) and the [CCSI Data Observatory](https://ccsi.dataobservatory.eu/) and [Green Deal Data Observatory](https://greendeal.dataobservatory.eu/).
+
+Get in [epub](https://contributors.dataobservatory.eu/observatory-contributors-handbook.epub) or [docx](https://contributors.dataobservatory.eu/observatory-contributors-handbook.docx) formats.
 
 ```{r eval=FALSE}
 install.packages("bookdown")
