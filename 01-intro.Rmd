@@ -22,7 +22,7 @@ The guidelines consist of three layers:
 
 - [x] `open output` (the indicators, recommendations, etc. derived from the analysis): we syncronize them with libraries via [OpenAIRE](https://www.openaire.eu/) and our visual assets and cultural data via [Europeana](https://www.europeana.eu/en) aggregators.
 
-Each level must be fully replicable. Establishing a clear link between input and output by displaying how the output changes under `Open Music Europe` uses `Open Policy Analysis` to create policy-relevant indicators. [@framework_for_opa_2020; @acre_guide] and they are fully in line with the Open Science objectives of the European Union 
+Each level must be fully replicable. Establishing a clear link between input and output by displaying how the output changes under `Open Music Europe` uses `Open Policy Analysis` to create policy-relevant indicators. [@OPA_guardia_et_al_2020; @acre_guide] and they are fully in line with the Open Science objectives of the European Union 
 [@reproducibility_scientific_results_eu_2020].
 
 ```{r opafig-wp, fig.align='center', fig.cap='Our ambition to increase transparency with introducing the Open Policy Analysis into the European music policies and collaborative data use in the European industry.'}
