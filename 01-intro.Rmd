@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  word_document: default
+---
 # Overview {#overview}
 
 ## Ambition in the Open Music Europe Grant Agreement
@@ -22,11 +27,16 @@ The guidelines consist of three layers:
 
 - [x] `open output` (the indicators, recommendations, etc. derived from the analysis): we syncronize them with libraries via [OpenAIRE](https://www.openaire.eu/) and our visual assets and cultural data via [Europeana](https://www.europeana.eu/en) aggregators.
 
-Each level must be fully replicable. Establishing a clear link between input and output by displaying how the output changes under `Open Music Europe` uses `Open Policy Analysis` to create policy-relevant indicators. [@framework_for_opa_2020; @acre_guide] and they are fully in line with the Open Science objectives of the European Union 
+Each level must be fully replicable. Establishing a clear link between input and output by displaying how the output changes under `Open Music Europe` uses `Open Policy Analysis` to create policy-relevant indicators. [@OPA_guardia_et_al_2020; @acre_guide] and they are fully in line with the Open Science objectives of the European Union 
 [@reproducibility_scientific_results_eu_2020].
 
-```{r opafig-wp, fig.align='center', fig.cap='Our ambition to increase transparency with introducing the Open Policy Analysis into the European music policies and collaborative data use in the European industry.'}
-knitr::include_graphics(file.path("webp", "opa_framework.webp"))
+```{r opafig-wp, fig.align='center', fig.cap='Our ambition to increase transparency with introducing the Open Policy Analysis into the European music policies and collaborative data use in the European industry.', echo=FALSE}
+if (knitr::is_html_output()) {
+ knitr::include_graphics(file.path("webp", "opa_framework.webp")) 
+} else {
+ knitr::include_graphics(file.path("png", "opa_framework.png")) 
+}
+
 ```
 
 Open Music Europe furthermore ensures that all materials, analysis, and outputs meet the `FAIR principles` enshrined in Horizon Europe and the EU’s open science agenda and will be submitted as best practices to the *Knowledge4Policy* [K4P](https://knowledge4policy.ec.europa.eu/home_en) Portal horizontal knowledge areas on Evidence-Informed Policy Making, Composite Indicators, Modelling, and AI Watch. 
@@ -99,7 +109,7 @@ You find more information on how to use Git and GitHub in the [Collaboration too
 
 ## Final folders for syncronization and publication
 
-Our long term storage is [Zenodo](), the repository system of [OpenAIRE](https://www.openaire.eu/) and 
+Our long term storage is [Zenodo](https://zenodo.org/communities/music_observatory/?page=1&size=20), the repository system of [OpenAIRE](https://www.openaire.eu/) and 
 CERN, the European Organization for Nuclear Research.
 
 Zenodo is an extremely useful tool:

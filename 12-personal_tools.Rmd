@@ -1,6 +1,6 @@
 # Personal and Research Tools
 
-## Write in Markdown {write-markdown}
+## Write in Markdown {#write-markdown}
 
 We create web resources: we want to ensure that our research results are findable, accessible, and reusable. The world wide web has been a source of high interoperability and findability in the last 30 years with the introduction of the http protocol and the standardization of the HTML text markup language.
 
@@ -8,7 +8,7 @@ All our output needs to be converted to HTML, but that does not mean that we nee
 
 Markdown is a much simplified HTML text notation intended to work well with word processors. 
 
-```{r personal-markdownflowchart}
+```{r personal-markdownflowchart, echo=FALSE}
 knitr::include_graphics("https://mdg.imgix.net/assets/images/markdown-flowchart.png?auto=format&fit=clip&q=40&w=1080")
 ```
 Or, if you want Word output, then instead of HTML, Word is rendered. Or PDF. Or EPUB.
@@ -19,7 +19,7 @@ There are countless Markdown editors. Because Markdown is so simple, you can, if
 
 Most word processors support markdown. For example, Google Docs has a [free extension](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607) that converts and document from Docs to markdown.
 
-```{r trydiliger-personal}
+```{r trydiliger-personal, echo=FALSE}
 knitr::include_graphics(here::here("png", "dilliger_example.png"))
 ```
 There are several online Markdown editors that you can use to try writing in Markdown. [Dillinger](https://dillinger.io/) is one of the best online Markdown editors. Just open the site and start typing in the left pane. A preview of the rendered document appears in the right pane.
@@ -32,3 +32,123 @@ You can simplify a Word document, for example, via uploading to Google Docs and 
 
 - [Basic Syntax](https://www.markdownguide.org/basic-syntax/)
 - [Extended Syntax](https://www.markdownguide.org/extended-syntax/)
+
+## Biblatex programmable bibliographies and citations {#biblatex}
+
+The `biblatex` format is the most likely format that you will use for scientific publications. You can export a collection, or more practically, a folder in a collection as a starting point, into the BibLatex format from Zotero (introduced in the previous chapter [Collaboration Tools - Zotero](#zotero). See _Zotero_ as a graphic UI, like Windows 11 or MacOS as a human-readable reference database, and the `biblatex` is a machine-readable (DOS or BSD) part.  The standard output from _Zotero_ is a good start, but usually, it is not perfect. Please open the `bib/example.bib` file and see an example of how to make a reference more usable and interoperable.
+
+`@book{example_id_2015,`---you will use this in your text</br>
+`	  author = {Doe, Jane},`</br>
+`	  editor = {Doe, Joe},`</br>
+`		date = {2015-06-06},`</br>
+`		year = {2015},`---some programs do not convert from `date` automatically</br>
+` 	month = {06},`---not needed with books, journals</br>
+` 	day = {06},`---not needed with books, journals</br>
+` 	doi = {<a Digital Object identifier code goes here>},`---connects to web resources<br>
+` 	isbn = {<an International Standard Book Number identifier goes here>},`<br>
+` 	urldate = {2023-07-12},`<br>
+` 	title = {This is an {EXAMPLE} title},` --- the EXAMPLE remains UPPERCASE<br>
+` 	abstract = {This is the {Place} for an {AbStraCT}.},`---Keep it short, or omit it</br>
+` 	url = {http://example.com/title},`<br>
+` 	issn = {<an International Standard Serial Number here>},`---connects with library catalogues<br>
+` 	publisher = {{Digital Music Observatory}},`<br>
+`  keywords = {Example},`---use only standardized keywords, like [LCSH](https://id.loc.gov/authorities/subjects.html)<br>
+`}`
+
+A `.bib` file is a text file that you can edit in Notepad or WordPad on Windows, VIM on Linux, in RStudio, or any text editor (not word processor like Word.) It contains the notation of _programmable bibliographic_ references.
+
+The first thing you see in `bib/example.bib` that it is a book (`@book`).  Other usual formatting options are `@misc` for any document, `@article` for a journal article, website for a website, etc.  If your document has an `ISBN`, it should always be reported as a book because the easiest matching of the bibliographic entry with the actual source is via International Standard Book Number (ISBN).
+
+Download the example bib from our repository:</br> [https://github.com/dataobservatory-eu/contributors/blob/main/bib/opa.bib](https://github.com/dataobservatory-eu/contributors/blob/main/bib/opa.bib)---press the 'Raw' button to exit the web preview and get the file as it is.
+
+Spaces, like in most programming languages, are not processed. `urldate = {2023-07-12}` and `urldate= {2023-07-12}` and `urldate={2023-07-12}` are identical in meaning. Use a consistent editing for readability.
+
+### Basic biblatex formatting
+
+In `biblatex`, each field has a value.  For example, `year=2015` stands for the publication year `2015`. When text is used and not a number, for example, month={March}, you use the `{}` sign as a quotation.  The most likely formatting error is with `{}`.
+
+-    **Simple values** have their own standard readings: `author={Doe, Jane}` will translate to `J. Doe` or `Jane Doe`.  The `author={Jane Doe}` will translate to `D. Jane`, or `Doe Jane`, because the standard name setting is GivenName, FamilyName. 
+
+-   **Double quotation** can override whatever standards. For example, `author={{Jane Doe}}` will always read as `Jane Doe` and not Doe Jane or J. Doe. This is what you use with institutional authors. When no person is named as an author, for example, in the case of a statute law text, use the double quotation.  `author={{European Commission}}` with read `European Commission`, but `author={European Commission}` will read `C. European`.
+
+-    **Add a language identifier**, for example, for English language books:</br>
+`language = {en}`. Your title will be converted to the linguistic requirements of the given language.  If you use multiple languages, and you want to avoid English title case for a Slovak or Hungarian document, then double quote the `title={{This is a sentence case title}}` will be `This is a sentence case title`, but `title = {{This is sentence case}}` will be overwritten to `This is Sentence Case` if your default language is English.
+
+-    If you use an **acronym**, then you always have to use double quotation. `The role of the EU in global politics` must be written title = `{The role of the {EU} in global politics}`; otherwise, the EU part will be converted to Eu in English and eu in Slovak. In this case, every word will be captions as required by your main document, but the `EU` part will always remain `EU`. 
+
+### Minimum citation standards
+
+-    We usually use **Author-Year citation formats**, so the `author={}` and `year={}` format should be always filled in. Zotero exports the publication date as `date={2015-06-06}`, which, depending on what program you use, may be translated to `year={2015}` or not. For full interoperability it is recommended to make sure by hand editing to have both. Because 2015 is a number, you can either write `year=2015` or `year={2015}`. 
+
+-    **Multiple authors** are separated by `and` or `AND`. Jane and Joe Doe should be written `author={Jane, Doe AND Joe, Doe}` or `author = {Jane, Doe AND {Joe Doe}}`. For complex names, like Spanish names, it may be confusing when the next name starts, so using `AND` in uppercase makes your citations easier to review. Beware, `author = {Jane Doe, Joe Doe}` will resolve to `J. D. Joe Doe`. The `,` separates the GivenName from the FamilyName, and not the two authors. Multiple authors must be separated by the `AND` command.
+
+-    Record when you **updated** the records. The `urldate={2023-07-07}` specifies when you last checked the bibliography (if the item exists, can be found.) It is not a mandatory field for books, journal articles, but it is for ephermal documents, websites. For your own consistency, please, always fill it in. If we have a very old URL date, usually it is a good practice to check if the document is still there.
+
+-    Use and an **object identifier**: To use inline in a text document, for example, to quote the dummy example quotation, in mardown we write `[@example_id_2015]` and then the `example_id_2015` citation will be present in the correct formatting in your reference list. 
+
+The `example_id_2015` is the ID of your reference.  It is a good practice to use only lower case, `_`, or `-` and numbers, because it works with programming languages, too. Using an empty space, like `example id` is a bad practice, and likely will not work. Try to create IDs that are easy to remember. For example, if you cite many laws, try to give each legal text a similar ID.
+
+A minimal, programmable bibliographic reference is
+
+`@book{example_id_2015,`<br>
+`	author = {Doe, Jane},`<br>
+`	editor = {Doe, Joe},`<br>
+` date = {2015-06-06},`<br>
+`	year = {2015},`<br>
+`	urldate = {2023-07-12},`<br>
+`	title = {This is an {EXAMPLE} title}`<br>
+}`
+
+The **most common mistakes** are these:</br>
+
+- A `field=` is missing
+- The start `{` or the end `}` of a quotation is missing, especially if there is a double quotation that is not finished like `title="{The role of the {EU}` instead of `title="{The role of the {EU}}`
+- The fields are not separated by a single `,` coma. You can use any number of spaces and tabs for formatting (tabs will be translated into spaces in a text editor), but you always must divide fields with a `,` sign.</br>
+> author = {Jane Doe},
+  editor =
+  year   = 2015,
+
+</br>is a problem because you forgot to fill out the field, an empty field should be</br>
+
+> author ={Jane Doe},
+  editor = {},
+  year   = 2015,
+  
+</br>or it should just be omitted.  If there is no editor information, either leave an empty text field `{}` or leave out the `editor-{...}, ` part altogether</br>.
+  
+> author = {Jane Doe},,
+  year   = 2015,
+
+</br>is a problem because the program is expecting a field between the two `,,` signs. This happens if you delete an empty field, but accidentally leave the comma there.</br>
+
+
+### Linked Open Data, PIDs
+
+The best connection of our documents and bibliographies with global libraries is persistent identifiers or `PIDs`.  If you use a PID, we can find the reference in global libraries, databases, or correct records; see new editions. You should always fill out the following PID fields.
+
+-    `doi = {10.5281/zenodo.8096811}`: a document identifier. </br>Books, journals usually have DOIs, but also manuscripts, individual charts, tables, datasets. This DOI will resolve to a _deferenced_ URL, i.e. [https://doi.org/10.5281/zenodo.8096811](https://doi.org/10.5281/zenodo.8096811). Dereferencing means that it immediately redirects you to the place where the document is actually available. Try the link out!
+
+-   `isbn = {1501122185}`: Only books have it, so the document must be a `@book` type. A book may have several ISBNs, because the paper and e-book version has different ISBN; and the translations and editions, too.  Citing the correct `ISBN` is important for page numbering.  A different format or edition may change text, and the page numbers will not add up.  You should quote the `ISBN` that you used.  If you downloaded a document with ISBN, use the electronic version on the Colofon or Impressum page. Try out for example `https://isbnsearch.org/`, i.e. [https://isbnsearch.org/isbn/1501122185](https://isbnsearch.org/isbn/1501122185).</br>
+-    `issn = {1725-2423}`: periodic publication have it.</br>It often happens that a book has a DOI and an `ISSN`, too, in this case, please try to record all of them. Try to paste `1725-2423` to `https://portal.issn.org/`, and you will get [https://portal.issn.org/resource/ISSN/1725-2423](https://portal.issn.org/resource/ISSN/1725-2423).
+
+### Keywords
+
+To make our documents findable, and to be able to find related citations in our bibliographies, we must use the `keywords` field.
+
+
+### Comprehensive BibLatex documentation
+
+[The biblatex Package. Programmable Bibliographies and Citations](https://mirror.lyrahosting.com/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf).  You find this reference in `bib/openscience.bib` as `@ctan_biblatex_2023`, which will resolve to [@ctan_biblatex_2023`] (check it out in the bibliography!)
+
+`@manual{ctan_biblatex_2023,`<br>
+`    title = {The biblatex Package. Programmable Bibliographies and Citations},`<br>
+`    author = {Philip, Kime AND Moritz, Wemheuer AND Philipp, Lehman},`<br>
+`    year = {2023},`<br>
+`    month = {03},`<br>
+`    day = {05},`<br>
+`    date = {2023-03-05},`<br>
+`    note = {TEX package version 3.19},`<br>
+`    url = {https://mirror.lyrahosting.com/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf}`<br>
+`  }`<br>
+
+

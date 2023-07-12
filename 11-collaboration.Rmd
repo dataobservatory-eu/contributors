@@ -149,10 +149,13 @@ Merge conflicts happen when two people make changes to the same file on GitHubâ€
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
 
-## Zotero{#zotero}
+## Zotero {#zotero}
 
 ```{r zotero}
 knitr::include_graphics(file.path("png", "zotero.png"))
 ```
 
 We have shared bibliographies on the open source, free [Zotero](https://www.zotero.org/) research assistant and we have a closed bibliography repository with BibLatex files on Github for the material that refer to in open science, open policy analysis, data science, and each other's work. The best place to share readings, bibliographies is *Zotero*, for preparing publications the Github account.
+
+
+
