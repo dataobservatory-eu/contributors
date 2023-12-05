@@ -1,21 +1,22 @@
---- 
+---
 title: "Contributors Guidebook for the Data Observatories and Open Collections"
 author: "Daniel Antal"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output:
-  bookdown::gitbook: default
-  bookdown::word_document2:
-    toc: false
-    #reference_docx: templates/Horizon_Europe_template.docx
-    language: English
-  bookdown::epub_book: default
   bookdown::pdf_book:
     language: english
+    number_sections: true
     toc: true
     tof: true
     includes:
       keep_tex: true
+  bookdown::word_document2:
+    toc: false
+    #reference_docx: templates/Horizon_Europe_template.docx
+    language: English
+  bookdown::gitbook: default
+  bookdown::epub_book: default
 documentclass: book
 bibliography: 
 - book.bib
@@ -23,6 +24,8 @@ bibliography:
 - bib/opa.bib
 - bib/opendata.bib
 - bib/openscience.bib
+- bib/openmusicrepositories.bib
+- bib/OpenMusE.bib
 biblio-style: apalike
 classoption: openany, a4paper, oneside
 lang: en
@@ -35,6 +38,8 @@ geometry: "left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm"
 github-repo: dataobservatory-eu/contributors
 description: "Contributors Guidebook for the Data Observatories and Open Collections."
 ---
+
+# Introduction {.unnumbered}
 
 ```{r setupknitr, include=FALSE}
 knitr::opts_chunk$set(echo      = FALSE, 
@@ -65,15 +70,13 @@ source(here("R", "html_caption.R"))
 is_word_output <- ifelse (knitr::is_html_output()|knitr::is_latex_output(), FALSE, TRUE)
 ```
 
-# Introduction {-}
-
 ::: {.rmdnote data-latex="{note}"}
-
-Big data creates **inequalities**, because only the world’s biggest global corporations, best endowed universities and strongest governments can maintain long, well-designed, global data collection programs.
-
+Big data creates **inequalities**, because only the world's biggest global corporations, best endowed universities and strongest governments can maintain long, well-designed, global data collection programs.
 :::
 
 This handbook is made for people working together in an [open collaboration](#open-collaboration) on the [Digital Music Observatory](https://music.dataobservatory.eu/) and its funded projects, [Listen Local Lithuania](https://lithuania.listen-local.net/), [Eviota](https://music.dataobservatory.eu/project/musiceviota/), [SurveyHarmonies](https://www.sinus-institut.de/en/sinus-institut/case-studies/surveyharmonies) and [Open Music Europe](https://music.dataobservatory.eu/project/openmusiceurope/); the connecting [Open Collection Network](https://www.opencollections.net/) and the [CCSI Data Observatory](https://ccsi.dataobservatory.eu/) and [Green Deal Data Observatory](https://greendeal.dataobservatory.eu/).
+
+> The latest updates can be found on [GitHub](https://github.com/dataobservatory-eu/contributors/) The major updates of this guide book can be found on Zenodo. [@open_music_europe_contributors_guidebook_repository_2023; @contributors_guidebook_2023] Funded by the European Union under [Grant No. 101095295](https://cordis.europa.eu/project/id/101095295). Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Commission's Citizens, Equality, Rights and Values Programme. Neither the European Union nor the granting authority can be held responsible for them.
 
 Get in [epub](https://contributors.dataobservatory.eu/observatory-contributors-handbook.epub) or [docx](https://contributors.dataobservatory.eu/observatory-contributors-handbook.docx) formats.
 
