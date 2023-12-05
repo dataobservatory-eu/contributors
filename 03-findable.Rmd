@@ -89,7 +89,7 @@ Before turning to the European FAIR requirements on **F**indability, we explain 
 
 
 ```{r orcigpng, fig.cap="All our researchers are identified with an ORCiD identifier"}
-knitr::include_graphics(file.path("png", "orcid.png"))
+add_graphics(file.path("png", "orcid.png"))
 ```
 
 Do not have an ORCiD yet? You can register on [orcid.org](https://orcid.org/), it takes only a minute. 

@@ -8,9 +8,6 @@ The first step in (re)using data, text, sound recordings, films, photographs is 
 
 
 ## OPA 
-
-
-
 Share raw (or analytic) data and materials in a way that the analysis is reproducible with minimal effort. Analytic and raw data are made available through a trusted repository. We chose GitHub as a temporary repository where all our changes can be traced; and periodically we place these materials on Zenodo, where they are stored independently from our Consortium for a very long period. Detailed instructions are provided for accessing raw data that is proprietary or contains sensitive information.
 
 

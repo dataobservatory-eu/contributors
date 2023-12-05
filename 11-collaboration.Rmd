@@ -119,7 +119,7 @@ All great projects start with collaboration. Pull requests are the foundation of
    - We recommend creating a public repository—private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
    
 ```{r, echo=FALSE, message=FALSE}
-knitr::include_graphics("https://user-images.githubusercontent.com/1221423/218594143-e60462b6-9f2a-4fa3-80de-063ac5429aab.png")
+add_graphics("https://user-images.githubusercontent.com/1221423/218594143-e60462b6-9f2a-4fa3-80de-063ac5429aab.png")
 ```   
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
@@ -157,5 +157,20 @@ knitr::include_graphics(file.path("png", "zotero.png"))
 
 We have shared bibliographies on the open source, free [Zotero](https://www.zotero.org/) research assistant and we have a closed bibliography repository with BibLatex files on Github for the material that refer to in open science, open policy analysis, data science, and each other's work. The best place to share readings, bibliographies is *Zotero*, for preparing publications the Github account.
 
+Here is [a short tutorial](https://research.library.gsu.edu/c.php?g=115275&p=751288) on how to syncronize your personal bibliographic reference collection with the Digital Music Observatory group library. 
+
+- Set up a free [Zotero.org](https://www.zotero.org/) user account if you do not have it already.
+- Open Zotero preferences (via the ⚙️ gear menu) and select the **Sync** tab. 
+- Enter your Zotero user name and password. 
+- Check the "sync automatically" box.
+- Check both boxes under File Syncing and choose Zotero storage for My Library. This will sync your PDF attachments as well as citations (more info).
+- Click the green circular arrow button at the top right corner of the Zotero window.
+Zotero will upload your library to the server.
+- If you look at the screenshot below, you see *My Library*, this is your original private library. This is not syncronised to the Digtial Music Observatory (or other) group.
+- You will see as separate collections the libraries of groups that you are member of. You can drag and drop references between your own personal library and the group libraries.
+
+```{r zoterogrouplibrary}
+knitr::include_graphics(file.path("png", "zotero_group_library_dmo.png"))
+```
 
 

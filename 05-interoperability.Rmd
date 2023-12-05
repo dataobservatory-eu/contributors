@@ -68,7 +68,7 @@ See [Tidy text](#tidy-text) for more information.
 ## Bibliography
 
 ```{r onboardzotero}
-knitr::include_graphics(file.path("png", "zotero.png"))
+add_graphics(file.path("png", "zotero.png"))
 ```
 
 - [x] We use the open source, free [Zotero](https://www.zotero.org/) research assistant. It can work with files created by Mendeley or OneNote. If you do not have a Zotero account, you should consider it after consulting our annex: [⏩ Annex / Collaboration tools / Zotero](#zotero)
@@ -97,6 +97,3 @@ When we are describing data or metadata, we often use vocabularies that provide 
 I3. [(Meta)data include qualified references to other (meta)data](https://www.go-fair.org/fair-principles/i3-metadata-include-qualified-references-metadata/)
 
 The goal therefore is to create as many meaningful links as possible between (meta)data resources to enrich the contextual knowledge about the data, balanced against the time/energy involved in making a good data model.
-
-
-

@@ -13,7 +13,7 @@ knitr::include_graphics("https://mdg.imgix.net/assets/images/markdown-flowchart.
 ```
 Or, if you want Word output, then instead of HTML, Word is rendered. Or PDF. Or EPUB.
 
-## Try it out {#try-markdown}
+## Try it out {#try-markdown-2}
 
 There are countless Markdown editors. Because Markdown is so simple, you can, if you want to, edit markdown files in Notepad, WordPad (Windows) or VIM (Linux).
 

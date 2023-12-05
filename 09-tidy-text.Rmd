@@ -3,7 +3,7 @@
 We create interconnected, interoperable (web) resources: we want to ensure that our research results are findable, accessible, and reusable. The world wide web has been a source of high interoperability and findability in the last 30 years with the introduction of the http protocol and the standardization of the HTML text markup language.
 
 ```{r, echo=FALSE, message=FALSE, fig.cap="Our entire website is created from simple markdown text. See Chapter  [13](https://manual.dataobservatory.eu/publishing)." }
-knitr::include_graphics(file.path('webp', 'screenshot_post_source_code.webp'))
+add_graphics(file.path('webp', 'screenshot_post_source_code.webp'))
 ```
 
 
@@ -17,7 +17,7 @@ knitr::include_graphics("https://mdg.imgix.net/assets/images/markdown-flowchart.
 
 Or, if you want Word output, then instead of HTML, Word is rendered. Or PDF. Or EPUB.
 
-## Try it out {#try-markdown}
+## Try it out {#try-markdown-1}
 
 There are countless Markdown editors. Because Markdown is so simple, you can, if you want to, edit markdown files in Notepad, WordPad (Windows) or VIM (Linux).
 
@@ -45,7 +45,7 @@ This is a course for new GitHub users.  You need to log into your (free) GitHub 
    - We recommend creating a public repository—private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
    
 ```{r, echo=FALSE, message=FALSE}
-knitr::include_graphics("https://user-images.githubusercontent.com/1221423/218594143-e60462b6-9f2a-4fa3-80de-063ac5429aab.png")
+add_graphics("https://user-images.githubusercontent.com/1221423/218594143-e60462b6-9f2a-4fa3-80de-063ac5429aab.png")
 ```   
 
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.

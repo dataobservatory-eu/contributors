@@ -7,7 +7,7 @@ To become a data curator, you do not need to be a data scientist, a statistician
 ### No Data is Available: This Scientist Stung Himself With Dozens Of Insects Because No One Else Would
 
 ```{r schmidpain}
-knitr::include_graphics(file.path("png", "schmidt_pain_index.png"))
+add_graphics(file.path("png", "schmidt_pain_index.png"))
 ```
 
 The Schmidt Pain Index, as its informally known, runs from 1-4. The common honey bee serves as its anchor point, a solid 2. At the top end of the scale lie the bullet ant and the tarantula hawk (which is neither a tarantula nor a hawk; it’s [a wasp](https://www.wired.com/2015/07/absurd-creature-of-the-week-tarantula-hawk/)). Watch the video with [Dr. Schmidt](https://youtu.be/i0LjT-qkUes), and listen to the whole interview [here](https://podcasts.apple.com/us/podcast/48-the-schmidt-sting-pain-index/id1011406983?i=1000391467968). [⏯ This Scientist Stung Himself With Dozens Of Insects Because No One Else Would](https://fivethirtyeight.com/features/this-scientist-stung-himself-with-dozens-of-insects-because-no-one-else-would/).
@@ -22,8 +22,8 @@ The Schmidt Pain Index, as its informally known, runs from 1-4. The common honey
 ### Web 3.0
 
 
-```{r}
-knitr::include_graphics(here::here("png", "weblinks.png"))
+```{r weblinksfigure, echo=FALSE}
+add_graphics(here::here("png", "weblinks.png"))
 ```
 
 
