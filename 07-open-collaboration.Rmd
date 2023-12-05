@@ -31,7 +31,7 @@ You also want to keep your private communications channels, like Whatsapp or Mes
 You must abide the [⏯ Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) (but *need not send* us proof) of pledging to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation. (See [translations](https://www.contributor-covenant.org/translations/) and the related [FAQ](https://www.contributor-covenant.org/faq/).)
 
 ```{r contributorcoventant}
-knitr::include_graphics(file.path("png", "contributor_covenant.png"))
+add_graphics(file.path("png", "contributor_covenant.png"))
 ```
 
 
@@ -48,8 +48,8 @@ We use GitHub, because it meats EU FAIR and OPA requirements, and works in a far
 **Github**, a Git-based open source and free service (currently owned by Microsoft) is our tool for a very simple task tracking in a kanban-style. We use it in the [Digital Music Observatory](https://music.dataobservatory.eu/), in the [Open Collections Network](https://www.opencollections.net/) (used in Listen Local, WP2 Open Music Europe), because it complies with FAIR and OPA requirements (see earlier: [F](#findable)indable, [A](#accessible)ccessible, [I](#interoperability), [R](#reuse)reusable work), and it is free to use for most users.
 
 
-```{r}
-knitr::include_graphics(file.path("png", "anyway-kanban-gh.png"))
+```{r anywaykanban}
+add_graphics(file.path("png", "anyway-kanban-gh.png"))
 ```
 _Image credit: [Anyway Kanban](https://github.com/cat-street/anyway-kanban)_ 
 
@@ -62,17 +62,12 @@ Because Github is a more advanced tool *for sharing files* than the aforemention
 - [ ] Please consider synching your files via Github with us after consulting our annex: [⏩ Annex / Collaboration tools / Github](#keybase).
 - [ ] We can automate the issuing of DOI's to all your figures, code, text automatically via Zenodo and Github. 
 
-
-
-
 ## Bibliography management
 
 ```{r open-collab-zotero}
-knitr::include_graphics(file.path("png", "zotero.png"))
+add_graphics(file.path("png", "zotero.png"))
 ```
 
 - [x] We use the open source, free [Zotero](https://www.zotero.org/) research assistant. It can work with files created by Mendeley or OneNote. If you do not have a Zotero account, you should consider it after consulting our annex: [⏩ Annex / Collaboration tools / Zotero](#zotero)
 
 - [ ] For publications, we export (and slightly modify) citation data to BibLatex, a text format that is required for most scientific journal/book Tex templates. Because no research assistant exports precisely the same way, manual adjustment is always required, so we keep up-to-date .bib collections on Github that are manually adjusted after exporting from Zotero, Mendeley, OneNote or downloaded directly from scientific libraries.
-
-

@@ -49,6 +49,16 @@ library(knitr)
 library(kableExtra)
 library(here)
 here::here()
+add_graphics <- function( file_path_html, file_path_other=NULL) {
+  
+  if ( is.null(file_path_other) ) file_path_other <- file_path_html
+  if (knitr::is_html_output()) {
+    knitr::include_graphics(file_path_html) 
+  } else {
+    knitr::include_graphics(file_path_other) 
+  }  
+}
+
 source(here("R", "html_caption.R"))
 # Ellipsis: …
 

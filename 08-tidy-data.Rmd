@@ -19,7 +19,8 @@ This is often far more easier to write than to do, but still, if you can make it
 [Tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html#:~:text=Tidy%20data%20is%20a%20standard,Every%20row%20is%20an%20observation) is data in Codd’s 3rd normal form, but with the constraints framed in statistical language, and the focus put on a single dataset rather than the many connected datasets common in relational databases.
 
 ```{r, echo=FALSE, fig.cap="Tidy data always has two forms: wide and long. From [R For Data Science - 12. Tidy Data](https://r4ds.had.co.nz/tidy-data.html)."}
-knitr::include_graphics('https://d33wubrfki0l68.cloudfront.net/3aea19108d39606bbe49981acda07696c0c7fcd8/2de65/images/tidy-9.png')
+
+add_graphics('https://d33wubrfki0l68.cloudfront.net/3aea19108d39606bbe49981acda07696c0c7fcd8/2de65/images/tidy-9.png')
 ```
 
 
