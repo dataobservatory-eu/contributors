@@ -47,7 +47,6 @@ We use GitHub, because it meats EU FAIR and OPA requirements, and works in a far
 
 **Github**, a Git-based open source and free service (currently owned by Microsoft) is our tool for a very simple task tracking in a kanban-style. We use it in the [Digital Music Observatory](https://music.dataobservatory.eu/), in the [Open Collections Network](https://www.opencollections.net/) (used in Listen Local, WP2 Open Music Europe), because it complies with FAIR and OPA requirements (see earlier: [F](#findable)indable, [A](#accessible)ccessible, [I](#interoperability), [R](#reuse)reusable work), and it is free to use for most users.
 
-
 ```{r anywaykanban}
 add_graphics(file.path("png", "anyway-kanban-gh.png"))
 ```
@@ -61,6 +60,13 @@ Because Github is a more advanced tool *for sharing files* than the aforemention
 - [x] If you do not have one, please create a free account with a username that you would use professionally. 
 - [ ] Please consider synching your files via Github with us after consulting our annex: [⏩ Annex / Collaboration tools / Github](#keybase).
 - [ ] We can automate the issuing of DOI's to all your figures, code, text automatically via Zenodo and Github. 
+
+Check out our repositories on GitHub:
+- Repository: Report on the European Music Economy [@open_music_europe_economy_repository]
+- Repository: Report on Music Diversity and Circulation in Europe [@open_music_europe_diversity_repository]
+- Repository: Report on Music, Society, and Citizenship in Europe [@open_music_europe_society_repository]
+- Report on Music Innovation \& Technology in Europe [@open_music_europe_innovation_repository_2023]
+- Repository for the Contributors Guidebook for the Data Observatories and Open Collections [@open_music_europe_contributors_guidebook_repository_2023]
 
 ## Bibliography management
 

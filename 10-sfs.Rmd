@@ -12,10 +12,8 @@ OPA Level 3: All project components are organized in a selfcontained folder usin
 
 We use a standardized file system that is standard in the R open statistical environment.  While it is an R standard, it is not unusual for researchers using Python or another programming language for their work.
 
-```{r, echo=FALSE, fig.cap="All project components are organized in a selfcontained folder using a Standard File Structure (SFS), and a readme file is included."}
-
-knitr::include_graphics(file.path("webp", "screenshot_contributors_repo.webp"))
-
+```{r 10-screenshot-contributors-repo, echo=FALSE, fig.cap="All project components are organized in a selfcontained folder using a Standard File Structure (SFS), and a readme file is included."}
+knitr::include_graphics(file.path("png", "screenshot_contributors_repo.png"))
 ```
 
 

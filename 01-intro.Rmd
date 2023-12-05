@@ -2,7 +2,7 @@
 
 ## Ambition in the Open Music Europe Grant Agreement
 
-[Open Music Europe](https://openmuse.dataobservatory.eu/) aims to contribute to the aim of creating a decentralised European intelligence hub where centralised data collection and analysis have failed in the music industry during the past 20 years. 
+[Open Music Europe](https://openmuse.eu/) aims to contribute to the aim of creating a decentralised European intelligence hub where centralised data collection and analysis have failed in the music industry during the past 20 years. 
 
 We envision the Open Data Observatory as a decentralised, complementary service to the ESSnet system (Eurostat and the national statistics offices) and the planned, centralised European Music Observatory (EMO). […]  We plan to implement the Open Data Observatory as an open-source, public-facing solution working in synergy with the EMO. 
 
@@ -26,8 +26,7 @@ Each level must be fully replicable. Establishing a clear link between input and
 [@reproducibility_scientific_results_eu_2020].
 
 ```{r opafig-wp, fig.align='center', fig.cap='Our ambition to increase transparency with introducing the Open Policy Analysis into the European music policies and collaborative data use in the European industry.', echo=FALSE}
-add_graphics( file_path_html=file.path("webp", "opa_framework.webp"),
-              file_path_other=file.path("png", "opa_framework.png") )
+knitr::include_graphics(here::here("png", "opa_framework.png") )
 ```
 
 Open Music Europe furthermore ensures that all materials, analysis, and outputs meet the `FAIR principles` enshrined in Horizon Europe and the EU’s open science agenda and will be submitted as best practices to the *Knowledge4Policy* [K4P](https://knowledge4policy.ec.europa.eu/home_en) Portal horizontal knowledge areas on Evidence-Informed Policy Making, Composite Indicators, Modelling, and AI Watch. 
@@ -111,12 +110,7 @@ Zenodo is an extremely useful tool:
 Yet, it is no exception to the garbage-in-garbage-out principle. In WP4 we develop tools that helps to make out a lot more from your blogposts, presentations, manuscripts, final articles, and datasets on Zenodo and the global knowledge graphs. See more in \@ref(tidy-data) [Tidy data](#tidy-data).
 
 ```{r reportoneconomicszenodo, echo=FALSE}
-
-add_graphics( 
-  file_path_html=file.path("webp", "report-european-music-economy_0_1.webp"),
-  file_path_other=file.path("png", "report-european-music-economy_0_1.png") 
-  )
-
+knitr::include_graphics(here::here(file.path("png", "report-european-music-economy_0_1.png") ))
 ```
 Check out our [Digital Music Observatory collection](https://zenodo.org/communities/music_observatory/) and this particular [storage folder](https://zenodo.org/record/6464990#.ZCCdGNJBzlg). 
 
