@@ -8,9 +8,11 @@ All our output needs to be converted to HTML, but that does not mean that we nee
 
 Markdown is a much simplified HTML text notation intended to work well with word processors. 
 
-```{r personal-markdownflowchart, echo=FALSE}
-knitr::include_graphics("https://mdg.imgix.net/assets/images/markdown-flowchart.png?auto=format&fit=clip&q=40&w=1080")
+```{r 12-markdownflowchart}
+knitr::include_graphics(here::here("png", "markdown-flowchart.png"))
+# https://mdg.imgix.net/assets/images/markdown-flowchart.png
 ```
+
 Or, if you want Word output, then instead of HTML, Word is rendered. Or PDF. Or EPUB.
 
 ## Try it out {#try-markdown-2}
@@ -140,6 +142,9 @@ To make our documents findable, and to be able to find related citations in our 
 
 [The biblatex Package. Programmable Bibliographies and Citations](https://mirror.lyrahosting.com/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf).  You find this reference in `bib/openscience.bib` as `@ctan_biblatex_2023`, which will resolve to [@ctan_biblatex_2023`] (check it out in the bibliography!)
 
+```{r example-biblatex, results="asis"}
+if (! knitr::is_latex_output()) {
+cat("
 `@manual{ctan_biblatex_2023,`<br>
 `    title = {The biblatex Package. Programmable Bibliographies and Citations},`<br>
 `    author = {Philip, Kime AND Moritz, Wemheuer AND Philipp, Lehman},`<br>
@@ -150,5 +155,12 @@ To make our documents findable, and to be able to find related citations in our 
 `    note = {TEX package version 3.19},`<br>
 `    url = {https://mirror.lyrahosting.com/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf}`<br>
 `  }`<br>
+    ") } else { 
+  knitr::include_graphics(here::here("png",  "screenshot-biblatex-example.png"))
+  }
+```
+
+
+
 
 
